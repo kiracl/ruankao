@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目资源管理 - 项目管理知识库</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <!-- 导航栏 -->
+    <nav class="bg-white dark:bg-gray-800 shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold text-indigo-600 dark:text-indigo-400">项目管理知识体系</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">首页</a>
+                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">知识领域</a>
+                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">过程组</a>
+                    <div class="relative">
+                        <input type="checkbox" id="darkModeToggle" class="hidden" />
+                        <label for="darkModeToggle" class="cursor-pointer">
+                            <div class="w-10 h-5 bg-gray-300 dark:bg-gray-600 rounded-full flex items-center p-0.5">
+                                <div class="w-4 h-4 bg-white rounded-full transform translate-x-0 dark:translate-x-5 transition-transform duration-300"></div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 滚动到顶部按钮 -->
+    <button id="scrollToTop" class="fixed bottom-8 right-8 bg-indigo-600 text-white p-2 rounded-full shadow-lg hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <header class="bg-white dark:bg-gray-800 shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">项目资源管理</h1>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-6 py-8">
+        <div id="section-intro" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">第13章 项目资源管理 (Project Resource Management)</h2>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                    项目资源管理包括识别、获取和管理完成项目所需的资源的过程，确保在正确的时间和地点有合适的资源可用于项目的成功完成。
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                    <div class="bg-indigo-50 dark:bg-gray-700 p-4 rounded-lg border-l-4 border-indigo-500">
+                        <h4 class="font-semibold text-indigo-700 dark:text-indigo-400 mb-2">有形资源</h4>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            包括人员（全职、兼职、临时）、设备、材料、用品、基础设施等物理资源。
+                        </p>
+                    </div>
+                    <div class="bg-indigo-50 dark:bg-gray-700 p-4 rounded-lg border-l-4 border-indigo-500">
+                        <h4 class="font-semibold text-indigo-700 dark:text-indigo-400 mb-2">团队资源</h4>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            包括团队成员的技能、经验、知识、能力以及团队的凝聚力、协作能力等无形资源。
+                        </p>
+                    </div>
+                    <div class="bg-indigo-50 dark:bg-gray-700 p-4 rounded-lg border-l-4 border-indigo-500">
+                        <h4 class="font-semibold text-indigo-700 dark:text-indigo-400 mb-2">资源管理过程</h4>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            包括规划、估算、获取、组建团队、管理团队和控制资源等六个主要过程。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="section-basics" class="scroll-mt-20 mt-12">
+            <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">管理基础</h2>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">13.1.1 项目资源的概念和重要性</h3>
+                
+                <div class="mb-6">
+                    <h4 class="text-xl font-semibold mb-2">概念</h4>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        项目资源是指为了完成项目活动所需要的各种有形和无形的要素。可以分为：
+                    </p>
+                    <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-2 mb-4">
+                        <li><strong>有形资源 (Physical Resources):</strong> 包括人员（全职、兼职、临时）、设备、材料、用品、基础设施等。</li>
+                        <li><strong>无形资源 (Team Resources):</strong> 包括团队成员的技能、经验、知识、能力以及团队的凝聚力、协作能力等。</li>
+                    </ul>
+                </div>
+                
+                <div class="mb-6">
+                    <h4 class="text-xl font-semibold mb-2">重要性</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                            <h5 class="font-semibold mb-2 text-indigo-600 dark:text-indigo-400">实现项目目标</h5>
+                            <p class="text-gray-700 dark:text-gray-300">
+                                项目的成功交付离不开充足且合适的资源。
+                            </p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                            <h5 class="font-semibold mb-2 text-indigo-600 dark:text-indigo-400">提高效率</h5>
+                            <p class="text-gray-700 dark:text-gray-300">
+                                合理的资源规划和分配可以提高项目执行的效率。
+                            </p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                            <h5 class="font-semibold mb-2 text-indigo-600 dark:text-indigo-400">优化成本</h5>
+                            <p class="text-gray-700 dark:text-gray-300">
+                                有效的资源管理可以避免资源浪费，控制项目成本。
+                            </p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                            <h5 class="font-semibold mb-2 text-indigo-600 dark:text-indigo-400">提升团队绩效</h5>
+                            <p class="text-gray-700 dark:text-gray-300">
+                                良好的团队管理可以提高团队成员的积极性和工作效率。
+                            </p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                            <h5 class="font-semibold mb-2 text-indigo-600 dark:text-indigo-400">应对资源约束</h5>
+                            <p class="text-gray-700 dark:text-gray-300">
+                                帮助项目经理在资源有限的情况下做出合理的决策。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="text-2xl font-semibold mb-4 mt-8 text-indigo-600 dark:text-indigo-500">13.1.2 项目资源管理的主要任务</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-tasks text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">规划资源管理</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            确定如何估算、获取、管理和控制项目所需的资源的过程。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-calculator text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">估算活动资源</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            确定完成每个活动所需的资源种类和数量的过程。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-hand-holding text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">获取资源</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            获取项目所需的有形资源和组建项目团队的过程。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-users-cog text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">组建团队</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            提高项目团队成员的技能和团队互动，以提升项目绩效的过程。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-user-check text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">管理团队</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            跟踪团队成员的绩效，提供反馈，解决问题，并管理团队变更的过程。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-cogs text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">控制资源</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            监督项目资源的使用情况，并根据资源管理计划管理资源的过程。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="section-processes" class="scroll-mt-20 mt-12">
+            <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">项目资源管理过程</h2>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">13.2.1 过程概述</h3>
+                
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg">
+                        <thead>
+                            <tr class="bg-indigo-100 dark:bg-indigo-900">
+                                <th class="py-3 px-4 text-left text-indigo-600 dark:text-indigo-400 font-semibold">过程</th>
+                                <th class="py-3 px-4 text-left text-indigo-600 dark:text-indigo-400 font-semibold">定义</th>
+                                <th class="py-3 px-4 text-left text-indigo-600 dark:text-indigo-400 font-semibold">主要输出</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-750">
+                                <td class="py-3 px-4 text-gray-700 dark:text-gray-300 font-medium">规划资源管理<br>(Plan Resource Management)</td>
+                                <td class="py-3 px-4 text-gray-700 dark:text-gray-300">确定如何估算、获取、管理和控制项目所需的有形和团队资源的过程。</td>
+                                <td class="py-3 px-4 text-gray-700 dark:text-gray-300">《资源管理计划》</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-750">
+                                <td class="py-3 px-4 text-gray-700 dark:text-gray-300 font-medium">估算活动资源<br>(Estimate Activity Resources)</td>
+                                <td class="py-3 px-4 text-gray-700 dark:text-gray-300">确定完成每个活动所需的有形、团队和设备资源的种类和数量的过程。</td>
+                                <td class="py-3 px-4 text-gray-700 dark:text-gray-300">《资源需求》、《估算依据》、《资源分解结构》</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-750">
+                                <td class="py-3 px-4 text-gray-700 dark:text-gray-300 font-medium">获取资源<br>(Acquire Resources)</td>
+                                <td class="py-3 px-4 text-gray-700 dark:text-gray-300">获取项目所需的有形资源，以及负责完成项目工作的团队成员的过程。</td>
+                                <td class="py-3 px-4 text-gray-700 dark:text-gray-300">《物理资源分配》、《项目团队分配》、《资源日历》</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-750">
+                                <td class="py-3 px-4 text-gray-700 dark:text-gray-300 font-medium">组建团队<br>(Develop Team)</td>
+                                <td class="py-3 px-4 text-gray-700 dark:text-gray-300">提高团队成员的技能和团队互动，以提升项目绩效的过程。</td>
+                                <td class="py-3 px-4 text-gray-700 dark:text-gray-300">《团队绩效评估》</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-750">
+                                <td class="py-3 px-4 text-gray-700 dark:text-gray-300 font-medium">管理团队<br>(Manage Team)</td>
+                                <td class="py-3 px-4 text-gray-700 dark:text-gray-300">跟踪团队成员的绩效，提供反馈，解决问题，并管理团队变更，以优化项目绩效的过程。</td>
+                                <td class="py-3 px-4 text-gray-700 dark:text-gray-300">《团队绩效评估》、《变更请求》、《项目管理计划更新》、《项目文件更新》</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-750">
+                                <td class="py-3 px-4 text-gray-700 dark:text-gray-300 font-medium">控制资源<br>(Control Resources)</td>
+                                <td class="py-3 px-4 text-gray-700 dark:text-gray-300">监督项目资源的使用情况，并根据资源管理计划管理资源的过程。</td>
+                                <td class="py-3 px-4 text-gray-700 dark:text-gray-300">《工作绩效信息》、《变更请求》、《项目文件更新》</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3 class="text-2xl font-semibold mb-4 mt-8 text-indigo-600 dark:text-indigo-500">13.2.2 裁剪考虑因素 (Tailoring Considerations)</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-project-diagram text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">项目的规模和复杂性</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            大型或复杂的项目可能需要更详细的资源管理计划和更复杂的团队管理方法。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-warehouse text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">资源的可用性</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            如果资源非常有限或难以获取，则需要更精细的资源规划和管理。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-globe text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">团队的地理位置</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            分散的团队需要更多的沟通和协作工具。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-building text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">组织的文化</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            组织的管理风格和团队文化会影响资源管理的实施方式。
+                        </p>
+                    </div>
+                </div>
+                
+                <h3 class="text-2xl font-semibold mb-4 mt-8 text-indigo-600 dark:text-indigo-500">13.2.3 敏捷与适应方法 (Agile and Adaptive Methods)</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-users text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">自组织团队</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            敏捷团队通常是自组织的，团队成员共同决定如何完成工作。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-user-ninja text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">通用型团队成员</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            敏捷团队鼓励团队成员拥有多种技能，以便更灵活地应对不同的任务。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-balance-scale text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">可持续的节奏</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            敏捷方法强调以可持续的节奏工作，避免团队过度疲劳。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-comments text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">面对面沟通</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            敏捷团队更倾向于面对面的沟通，以提高效率和协作。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-sync-alt text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">迭代反馈</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            敏捷方法通过频繁的反馈循环来调整资源分配和团队工作方式。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="section-team" class="scroll-mt-20 mt-12">
+            <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">团队管理</h2>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">13.3.1 团队发展阶段</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-6">
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <span class="font-bold text-indigo-600 dark:text-indigo-400">1</span>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">形成阶段<br>(Forming)</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            团队成员初次相识，相互了解，确定团队目标和规则。
+                        </p>
+                        <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                            <span class="font-semibold">特点：</span> 礼貌、谨慎、依赖领导
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <span class="font-bold text-indigo-600 dark:text-indigo-400">2</span>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">震荡阶段<br>(Storming)</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            团队成员开始表达自己的观点，可能出现冲突和分歧。
+                        </p>
+                        <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                            <span class="font-semibold">特点：</span> 冲突、抵抗、情绪化
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <span class="font-bold text-indigo-600 dark:text-indigo-400">3</span>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">规范阶段<br>(Norming)</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            团队开始建立共识，形成工作规范和流程。
+                        </p>
+                        <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                            <span class="font-semibold">特点：</span> 合作、接受、信任
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <span class="font-bold text-indigo-600 dark:text-indigo-400">4</span>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">执行阶段<br>(Performing)</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            团队高效运作，成员相互支持，共同解决问题。
+                        </p>
+                        <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                            <span class="font-semibold">特点：</span> 高效、协同、自主
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <span class="font-bold text-indigo-600 dark:text-indigo-400">5</span>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">解散阶段<br>(Adjourning)</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            项目完成，团队解散，成员可能有不舍情绪。
+                        </p>
+                        <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                            <span class="font-semibold">特点：</span> 完成、总结、离别
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="text-2xl font-semibold mb-4 mt-8 text-indigo-600 dark:text-indigo-500">13.3.2 团队建设策略</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-bullseye text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">明确目标和期望</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            确保每个团队成员都清楚地了解项目目标、自己的角色和责任。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-handshake text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">建立信任</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            创造开放、诚实的环境，鼓励团队成员之间建立信任关系。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-graduation-cap text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">培训和发展</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            提供必要的培训和发展机会，帮助团队成员提升技能和能力。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-trophy text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">认可和奖励</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            及时认可和奖励团队成员的贡献和成就，提高团队士气。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-comments text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">有效沟通</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            建立畅通的沟通渠道，确保信息能够及时、准确地传递。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-puzzle-piece text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">团队活动</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            组织团队建设活动，增强团队凝聚力和协作能力。
+                        </p>
+                    </div>
+                </div>
+                
+                <h3 class="text-2xl font-semibold mb-4 mt-8 text-indigo-600 dark:text-indigo-500">13.3.3 冲突管理</h3>
+                
+                <div class="mb-6">
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        冲突是团队工作中不可避免的一部分，有效的冲突管理可以将冲突转化为团队成长的机会。
+                    </p>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg">
+                            <thead>
+                                <tr class="bg-indigo-100 dark:bg-indigo-900">
+                                    <th class="py-3 px-4 text-left text-indigo-600 dark:text-indigo-400 font-semibold">冲突管理方式</th>
+                                    <th class="py-3 px-4 text-left text-indigo-600 dark:text-indigo-400 font-semibold">描述</th>
+                                    <th class="py-3 px-4 text-left text-indigo-600 dark:text-indigo-400 font-semibold">适用场景</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-750">
+                                    <td class="py-3 px-4 text-gray-700 dark:text-gray-300 font-medium">合作/解决问题<br>(Collaborating)</td>
+                                    <td class="py-3 px-4 text-gray-700 dark:text-gray-300">共同寻找满足各方需求的解决方案</td>
+                                    <td class="py-3 px-4 text-gray-700 dark:text-gray-300">问题复杂，需要综合各方观点</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-750">
+                                    <td class="py-3 px-4 text-gray-700 dark:text-gray-300 font-medium">妥协/调解<br>(Compromising)</td>
+                                    <td class="py-3 px-4 text-gray-700 dark:text-gray-300">寻找部分满足各方需求的中间解决方案</td>
+                                    <td class="py-3 px-4 text-gray-700 dark:text-gray-300">时间有限，需要临时解决方案</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-750">
+                                    <td class="py-3 px-4 text-gray-700 dark:text-gray-300 font-medium">强制/指令<br>(Forcing)</td>
+                                    <td class="py-3 px-4 text-gray-700 dark:text-gray-300">利用权力或地位强制实施某一方的解决方案</td>
+                                    <td class="py-3 px-4 text-gray-700 dark:text-gray-300">紧急情况，需要快速决策</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-750">
+                                    <td class="py-3 px-4 text-gray-700 dark:text-gray-300 font-medium">撤退/回避<br>(Withdrawing)</td>
+                                    <td class="py-3 px-4 text-gray-700 dark:text-gray-300">回避冲突，推迟解决或完全退出</td>
+                                    <td class="py-3 px-4 text-gray-700 dark:text-gray-300">问题不重要或需要冷静期</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-750">
+                                    <td class="py-3 px-4 text-gray-700 dark:text-gray-300 font-medium">缓和/迁就<br>(Smoothing)</td>
+                                    <td class="py-3 px-4 text-gray-700 dark:text-gray-300">强调共同点，淡化分歧</td>
+                                    <td class="py-3 px-4 text-gray-700 dark:text-gray-300">维护关系比解决问题更重要</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="section-resource-control" class="scroll-mt-20 mt-12">
+            <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">资源控制</h2>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">13.4.1 资源优化技术</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-balance-scale-right text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">资源平衡</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            调整项目活动的开始和结束时间，以平衡资源需求和资源供应，避免资源过度分配。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-level-up-alt text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">资源平滑</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            在不影响关键路径的情况下，调整非关键活动的资源使用，使资源使用更加均匀。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-exchange-alt text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">资源替代</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            使用替代资源来完成特定活动，以解决资源短缺问题。
+                        </p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                <i class="fas fa-compress-arrows-alt text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">资源压缩</h5>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            增加资源以缩短活动持续时间，通常用于赶工或进度压缩。
+                        </p>
+                    </div>
+                </div>
+                
+                <h3 class="text-2xl font-semibold mb-4 mt-8 text-indigo-600 dark:text-indigo-500">13.4.2 资源监控与控制</h3>
+                
+                <div class="mb-6">
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        有效的资源监控与控制可以确保项目资源得到最佳利用，并及时发现和解决资源问题。
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                    <i class="fas fa-chart-bar text-indigo-600 dark:text-indigo-400"></i>
+                                </div>
+                                <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">资源使用报告</h5>
+                            </div>
+                            <p class="text-gray-700 dark:text-gray-300">
+                                定期生成资源使用报告，跟踪实际资源使用情况与计划的对比。
+                            </p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                    <i class="fas fa-exclamation-triangle text-indigo-600 dark:text-indigo-400"></i>
+                                </div>
+                                <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">资源问题识别</h5>
+                            </div>
+                            <p class="text-gray-700 dark:text-gray-300">
+                                及时识别资源过度分配、资源短缺或资源利用率低等问题。
+                            </p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                    <i class="fas fa-tools text-indigo-600 dark:text-indigo-400"></i>
+                                </div>
+                                <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">纠正措施</h5>
+                            </div>
+                            <p class="text-gray-700 dark:text-gray-300">
+                                实施必要的纠正措施，如重新分配资源、调整计划或获取额外资源。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 13.8 资源管理总结 -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden mt-8 mb-8">
+            <div class="bg-indigo-600 dark:bg-indigo-800 text-white p-4">
+                <h2 class="text-2xl font-semibold">13.8 资源管理总结</h2>
+            </div>
+            <div class="p-6">
+                <div class="bg-indigo-50 dark:bg-indigo-900 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400 mb-4">关键要点</h3>
+                    
+                    <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-3">
+                        <li>
+                            <strong>资源类型：</strong> 项目资源包括有形资源（人员、设备、材料等）和团队资源（技能、知识、能力等）。
+                        </li>
+                        <li>
+                            <strong>资源管理过程：</strong> 包括规划资源管理、估算活动资源、获取资源、组建团队、管理团队和控制资源六个主要过程。
+                        </li>
+                        <li>
+                            <strong>团队发展：</strong> 团队通常经历形成、震荡、规范、执行和解散五个发展阶段。
+                        </li>
+                        <li>
+                            <strong>冲突管理：</strong> 有效的冲突管理可以将冲突转化为团队成长的机会，常见的冲突管理方式包括合作、妥协、强制、撤退和缓和。
+                        </li>
+                        <li>
+                            <strong>资源优化：</strong> 资源平衡、资源平滑、资源替代和资源压缩是常用的资源优化技术。
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-6">
+                        <h4 class="text-lg font-semibold text-indigo-600 dark:text-indigo-400 mb-3">资源管理的价值</h4>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            有效的资源管理可以确保项目在正确的时间和地点拥有合适的资源，提高项目执行效率，控制项目成本，提升团队绩效，并为项目的成功交付奠定基础。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="flex justify-between items-center mt-12 mb-8">
+            <a href="12Project Quality Management.html" class="flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                <i class="fas fa-arrow-left mr-2"></i>
+                上一章：项目质量管理
+            </a>
+            <a href="14Project Communications Management.html" class="flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                下一章：项目沟通管理
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>    
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="bg-white dark:bg-gray-800 text-gray-800 dark:text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold">项目管理知识体系</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2">资源管理是项目成功的关键因素</p>
+                </div>
+                <div>
+                    <ul class="flex space-x-4">
+                        <li><a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">首页</a></li>
+                        <li><a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">知识领域</a></li>
+                        <li><a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">过程组</a></li>
+                        <li><a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-300 dark:border-gray-700 mt-8 pt-8 text-center text-gray-600 dark:text-gray-400">
+                <p>&copy; 2023 项目管理知识体系 | 保留所有权利</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+    <script>
+        // 暗黑模式切换
+        function darkMode() {
+            return {
+                dark: localStorage.getItem('dark-mode') === 'true',
+                toggle() {
+                    this.dark = !this.dark;
+                    localStorage.setItem('dark-mode', this.dark);
+                    this.updateTheme();
+                },
+                updateTheme() {
+                    if (this.dark) {
+                        document.documentElement.classList.add('dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                    }
+                },
+                init() {
+                    if (localStorage.getItem('dark-mode') === null) {
+                        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                            localStorage.setItem('dark-mode', 'true');
+                            this.dark = true;
+                        }
+                    }
+                    this.updateTheme();
+                }
+            }
+        }
+
+        // 滚动到顶部
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // 目录导航
+        document.addEventListener('DOMContentLoaded', function() {
+            const tocLinks = document.querySelectorAll('.toc-link');
+            
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

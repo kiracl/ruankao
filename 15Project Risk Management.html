@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目风险管理 | Project Management Knowledge</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        .dark .dark\:bg-gray-850 {
+            background-color: #1a202e;
+        }
+        .dark .dark\:fill-gray-850 {
+            fill: #1a202e;
+        }
+        .dark .dark\:fill-indigo-900 {
+            fill: #312e81;
+        }
+        .dark .dark\:stroke-indigo-900 {
+            stroke: #312e81;
+        }
+        .dark .dark\:fill-indigo-950 {
+            fill: #1e1b4b;
+        }
+        .dark .dark\:stroke-indigo-800 {
+            stroke: #3730a3;
+        }
+        .dark .dark\:fill-blue-900 {
+            fill: #1e3a8a;
+        }
+        .dark .dark\:stroke-blue-500 {
+            stroke: #3b82f6;
+        }
+        .scroll-mt-20 {
+            scroll-margin-top: 5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <div class="min-h-screen">
+        <!-- 导航栏 -->
+        <nav class="bg-white dark:bg-gray-800 shadow-md fixed w-full z-10">
+            <div class="container mx-auto px-4 py-3">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <a href="index.html" class="text-indigo-600 dark:text-indigo-400 font-bold text-xl">项目管理知识体系</a>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button id="darkModeToggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden dark:block text-yellow-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:hidden text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 主要内容 -->
+        <div class="container mx-auto px-4 pt-20 pb-12">
+            <div class="flex flex-wrap">
+                <!-- 侧边栏 -->
+                <div class="w-full lg:w-1/4 px-4 mb-8">
+                    <div class="sticky top-24">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                            <h3 class="text-lg font-semibold mb-4 text-indigo-600 dark:text-indigo-400">第15章 风险管理</h3>
+                            <ul class="space-y-2">
+                                <li><a href="#section-intro" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">15.1 管理基础</a></li>
+                                <li><a href="#section-process" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">15.2 项目风险管理过程</a></li>
+                                <li><a href="#section-plan" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">15.3 规划风险管理</a></li>
+                                <li><a href="#section-identify" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">15.4 识别风险</a></li>
+                                <li><a href="#section-qualitative" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">15.5 实施定性风险分析</a></li>
+                                <li><a href="#section-quantitative" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">15.6 实施定量风险分析</a></li>
+                                <li><a href="#section-response" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">15.7 规划风险应对</a></li>
+                                <li><a href="#section-implement" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">15.8 实施风险应对</a></li>
+                                <li><a href="#section-monitor" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">15.9 监督风险</a></li>
+                                <li><a href="#section-relationship" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">15.10 与其他知识领域的关系</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 主内容区 -->
+                <div class="w-full lg:w-3/4 px-4">
+                    <h1 class="text-4xl font-bold mb-8 text-indigo-700 dark:text-indigo-500">第15章 项目风险管理 <span class="text-2xl font-normal text-gray-600 dark:text-gray-400">(Project Risk Management)</span></h1>
+                    
+                    <div id="section-intro" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">15.1 管理基础</h2>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.1.1 项目风险的概念和重要性</h3>
+                            
+                            <div class="mb-6">
+                                <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg mb-4">
+                                    <p class="font-medium text-lg text-indigo-800 dark:text-indigo-300">概念：</p>
+                                    <p class="text-gray-700 dark:text-gray-300 mb-2">项目风险是指一旦发生，会对项目目标（如范围、进度、成本、质量）产生积极或消极影响的不确定事件或条件。</p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                                        <div class="bg-red-50 dark:bg-red-900/20 p-3 rounded-lg border-l-4 border-red-500">
+                                            <p class="font-medium text-red-700 dark:text-red-400">威胁 (Threats)</p>
+                                            <p class="text-gray-700 dark:text-gray-300">可能对项目目标产生负面影响的风险。</p>
+                                        </div>
+                                        <div class="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg border-l-4 border-green-500">
+                                            <p class="font-medium text-green-700 dark:text-green-400">机会 (Opportunities)</p>
+                                            <p class="text-gray-700 dark:text-gray-300">可能对项目目标产生积极影响的风险。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <h4 class="text-xl font-semibold mb-3 text-indigo-600 dark:text-indigo-500">重要性：</h4>
+                                <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+                                    <li><span class="font-medium">提高项目成功率：</span> 通过识别、评估和应对风险，可以降低项目失败的可能性。</li>
+                                    <li><span class="font-medium">减少负面影响：</span> 提前识别威胁并制定应对措施，可以减轻其对项目的影响。</li>
+                                    <li><span class="font-medium">抓住机会：</span> 识别机会并采取措施利用它们，可以为项目带来额外的收益。</li>
+                                    <li><span class="font-medium">优化资源分配：</span> 将资源集中用于应对最重要的风险。</li>
+                                    <li><span class="font-medium">提高干系人信心：</span> 有效的风险管理能够增强干系人对项目成功的信心。</li>
+                                </ul>
+                            </div>
+                            
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.1.2 项目风险管理的主要任务</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+                                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                    <h5 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">规划风险管理</h5>
+                                    <p class="text-gray-700 dark:text-gray-300 text-sm">确定如何进行项目风险管理活动的过程。</p>
+                                </div>
+                                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                    <h5 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">识别风险</h5>
+                                    <p class="text-gray-700 dark:text-gray-300 text-sm">识别可能影响项目的潜在风险，并将其记录在风险登记册中的过程。</p>
+                                </div>
+                                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                    <h5 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">实施定性风险分析</h5>
+                                    <p class="text-gray-700 dark:text-gray-300 text-sm">通过评估和综合分析风险发生的概率和影响，对风险进行优先级排序的过程。</p>
+                                </div>
+                                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                    <h5 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">实施定量风险分析</h5>
+                                    <p class="text-gray-700 dark:text-gray-300 text-sm">对已识别的风险进行数值分析，以评估其对项目整体目标的影响的过程。</p>
+                                </div>
+                                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                    <h5 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">规划风险应对</h5>
+                                    <p class="text-gray-700 dark:text-gray-300 text-sm">为应对威胁和利用机会而制定可选方案、选择应对策略并规划应对措施的过程。</p>
+                                </div>
+                                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                    <h5 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">实施风险应对</h5>
+                                    <p class="text-gray-700 dark:text-gray-300 text-sm">按照风险管理计划实施已商定的风险应对措施的过程。</p>
+                                </div>
+                                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500 md:col-span-2 lg:col-span-1">
+                                    <h5 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">监督风险</h5>
+                                    <p class="text-gray-700 dark:text-gray-300 text-sm">在整个项目期间监督已识别风险、识别新风险、评估风险应对措施的有效性，并执行风险管理计划的过程。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="section-process" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">15.2 项目风险管理过程</h2>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.2.1 过程概述</h3>
+                            
+                            <div class="mb-6">
+                                <!-- 替换原有的图片引用，添加一个SVG风格的流程图 -->
+                                <div class="my-8">
+                                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                                        <div class="w-full overflow-x-auto">
+                                            <svg class="w-full" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+                                                <!-- 标题 -->
+                                                <text x="450" y="30" text-anchor="middle" class="text-2xl font-bold" fill="#4338CA" dominant-baseline="middle">项目风险管理过程</text>
+                                                
+                                                <!-- 背景 -->
+                                                <rect x="50" y="50" width="800" height="400" rx="10" fill="#F3F4F6" stroke="#4F46E5" stroke-width="2" opacity="0.5"/>
+                                                
+                                                <!-- 规划过程组 -->
+                                                <rect x="100" y="70" width="200" height="50" rx="5" fill="#4338CA" stroke="#6366F1" stroke-width="2"/>
+                                                <text x="200" y="95" text-anchor="middle" fill="white" dominant-baseline="middle">规划过程组</text>
+                                                
+                                                <!-- 规划风险管理 -->
+                                                <rect x="120" y="140" width="160" height="50" rx="5" fill="#6366F1" stroke="#818CF8" stroke-width="2"/>
+                                                <text x="200" y="160" text-anchor="middle" fill="white" dominant-baseline="middle">规划风险管理</text>
+                                                <text x="200" y="175" text-anchor="middle" fill="#C7D2FE" font-size="10" dominant-baseline="middle">(Plan Risk Management)</text>
+                                                
+                                                <!-- 识别风险 -->
+                                                <rect x="120" y="220" width="160" height="50" rx="5" fill="#6366F1" stroke="#818CF8" stroke-width="2"/>
+                                                <text x="200" y="240" text-anchor="middle" fill="white" dominant-baseline="middle">识别风险</text>
+                                                <text x="200" y="255" text-anchor="middle" fill="#C7D2FE" font-size="10" dominant-baseline="middle">(Identify Risks)</text>
+                                                
+                                                <!-- 定性风险分析 -->
+                                                <rect x="120" y="300" width="160" height="50" rx="5" fill="#6366F1" stroke="#818CF8" stroke-width="2"/>
+                                                <text x="200" y="320" text-anchor="middle" fill="white" dominant-baseline="middle">实施定性风险分析</text>
+                                                <text x="200" y="335" text-anchor="middle" fill="#C7D2FE" font-size="10" dominant-baseline="middle">(Perform Qualitative Risk Analysis)</text>
+                                                
+                                                <!-- 定量风险分析 -->
+                                                <rect x="120" y="380" width="160" height="50" rx="5" fill="#6366F1" stroke="#818CF8" stroke-width="2"/>
+                                                <text x="200" y="400" text-anchor="middle" fill="white" dominant-baseline="middle">实施定量风险分析</text>
+                                                <text x="200" y="415" text-anchor="middle" fill="#C7D2FE" font-size="10" dominant-baseline="middle">(Perform Quantitative Risk Analysis)</text>
+                                                
+                                                <!-- 执行过程组 -->
+                                                <rect x="350" y="70" width="200" height="50" rx="5" fill="#4338CA" stroke="#6366F1" stroke-width="2"/>
+                                                <text x="450" y="95" text-anchor="middle" fill="white" dominant-baseline="middle">执行过程组</text>
+                                                
+                                                <!-- 规划风险应对 -->
+                                                <rect x="370" y="140" width="160" height="50" rx="5" fill="#6366F1" stroke="#818CF8" stroke-width="2"/>
+                                                <text x="450" y="160" text-anchor="middle" fill="white" dominant-baseline="middle">规划风险应对</text>
+                                                <text x="450" y="175" text-anchor="middle" fill="#C7D2FE" font-size="10" dominant-baseline="middle">(Plan Risk Responses)</text>
+                                                
+                                                <!-- 实施风险应对 -->
+                                                <rect x="370" y="220" width="160" height="50" rx="5" fill="#6366F1" stroke="#818CF8" stroke-width="2"/>
+                                                <text x="450" y="240" text-anchor="middle" fill="white" dominant-baseline="middle">实施风险应对</text>
+                                                <text x="450" y="255" text-anchor="middle" fill="#C7D2FE" font-size="10" dominant-baseline="middle">(Implement Risk Responses)</text>
+                                                
+                                                <!-- 风险管理计划 -->
+                                                <rect x="370" y="300" width="160" height="50" rx="5" fill="#6366F1" stroke="#818CF8" stroke-width="2"/>
+                                                <text x="450" y="325" text-anchor="middle" fill="white" dominant-baseline="middle">风险管理计划</text>
+                                                
+                                                <!-- 风险登记册 -->
+                                                <rect x="370" y="380" width="160" height="50" rx="5" fill="#6366F1" stroke="#818CF8" stroke-width="2"/>
+                                                <text x="450" y="405" text-anchor="middle" fill="white" dominant-baseline="middle">风险登记册</text>
+                                                
+                                                <!-- 监控过程组 -->
+                                                <rect x="600" y="70" width="200" height="50" rx="5" fill="#4338CA" stroke="#6366F1" stroke-width="2"/>
+                                                <text x="700" y="95" text-anchor="middle" fill="white" dominant-baseline="middle">监控过程组</text>
+                                                
+                                                <!-- 监督风险 -->
+                                                <rect x="620" y="140" width="160" height="50" rx="5" fill="#6366F1" stroke="#818CF8" stroke-width="2"/>
+                                                <text x="700" y="160" text-anchor="middle" fill="white" dominant-baseline="middle">监督风险</text>
+                                                <text x="700" y="175" text-anchor="middle" fill="#C7D2FE" font-size="10" dominant-baseline="middle">(Monitor Risks)</text>
+                                                
+                                                <!-- 工作绩效报告 -->
+                                                <rect x="620" y="220" width="160" height="50" rx="5" fill="#6366F1" stroke="#818CF8" stroke-width="2"/>
+                                                <text x="700" y="245" text-anchor="middle" fill="white" dominant-baseline="middle">工作绩效报告</text>
+                                                
+                                                <!-- 连接线 - 信息流 -->
+                                                <!-- 规划风险管理 -> 识别风险 -->
+                                                <line x1="200" y1="190" x2="200" y2="220" stroke="#6366F1" stroke-width="2" marker-end="url(#arrowhead)"/>
+                                                
+                                                <!-- 识别风险 -> 定性风险分析 -->
+                                                <line x1="200" y1="270" x2="200" y2="300" stroke="#6366F1" stroke-width="2" marker-end="url(#arrowhead)"/>
+                                                
+                                                <!-- 定性风险分析 -> 定量风险分析 -->
+                                                <line x1="200" y1="350" x2="200" y2="380" stroke="#6366F1" stroke-width="2" marker-end="url(#arrowhead)"/>
+                                                
+                                                <!-- 定量风险分析 -> 规划风险应对 -->
+                                                <path d="M 280 405 Q 325 405 325 245 Q 325 165 370 165" fill="none" stroke="#6366F1" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+                                                
+                                                <!-- 规划风险应对 -> 实施风险应对 -->
+                                                <line x1="450" y1="190" x2="450" y2="220" stroke="#6366F1" stroke-width="2" marker-end="url(#arrowhead)"/>
+                                                
+                                                <!-- 实施风险应对 -> 监督风险 -->
+                                                <path d="M 530 245 Q 575 245 575 165 Q 575 165 620 165" fill="none" stroke="#6366F1" stroke-width="2" marker-end="url(#arrowhead)"/>
+                                                
+                                                <!-- 监督风险 -> 识别风险 (反馈) -->
+                                                <path d="M 620 165 Q 325 165 325 245 Q 325 245 280 245" fill="none" stroke="#A78BFA" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+                                                
+                                                <!-- 风险管理计划连接 -->
+                                                <path d="M 450 300 Q 450 280 450 270" fill="none" stroke="#6366F1" stroke-width="2" marker-end="url(#arrowhead)"/>
+                                                
+                                                <!-- 风险登记册连接 -->
+                                                <path d="M 450 380 Q 450 360 450 350" fill="none" stroke="#6366F1" stroke-width="2" marker-end="url(#arrowhead)"/>
+                                                
+                                                <!-- 工作绩效报告连接 -->
+                                                <path d="M 700 220 Q 700 200 700 190" fill="none" stroke="#6366F1" stroke-width="2" marker-end="url(#arrowhead)"/>
+                                                
+                                                <!-- 箭头标记定义 -->
+                                                <defs>
+                                                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                                        <polygon points="0 0, 10 3.5, 0 7" fill="#6366F1" />
+                                                    </marker>
+                                                </defs>
+                                                
+                                                <!-- 图例 -->
+                                                <rect x="250" y="465" width="20" height="20" fill="#4338CA" stroke="#6366F1" stroke-width="2"/>
+                                                <text x="280" y="475" fill="#6366F1" dominant-baseline="middle">过程</text>
+                                                
+                                                <rect x="350" y="465" width="20" height="20" fill="#6366F1" stroke="#818CF8" stroke-width="2"/>
+                                                <text x="380" y="475" fill="#6366F1" dominant-baseline="middle">文档/输出</text>
+                                                
+                                                <line x1="475" y1="475" x2="515" y2="475" stroke="#6366F1" stroke-width="2" marker-end="url(#arrowhead)"/>
+                                                <text x="520" y="475" fill="#6366F1" dominant-baseline="middle">信息流</text>
+                                                
+                                                <line x1="595" y1="475" x2="635" y2="475" stroke="#A78BFA" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+                                                <text x="640" y="475" fill="#A78BFA" dominant-baseline="middle">反馈流</text>
+                                            </svg>
+                                        </div>
+                                        
+                                        <p class="text-center mt-4 text-gray-700 dark:text-gray-300">
+                                            图15.1 项目风险管理过程展示了七个主要过程之间的关系、信息流动和反馈机制
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <div class="flex items-center mb-2">
+                                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                                <span class="font-bold text-indigo-600 dark:text-indigo-400">1</span>
+                                            </div>
+                                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">规划风险管理<br>(Plan Risk Management)</h5>
+                                        </div>
+                                        <p class="text-gray-700 dark:text-gray-300">
+                                            确定如何进行项目风险管理活动的过程。
+                                        </p>
+                                        <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                                            <span class="font-semibold">过程组：</span> 规划过程组
+                                        </div>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <div class="flex items-center mb-2">
+                                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                                <span class="font-bold text-indigo-600 dark:text-indigo-400">2</span>
+                                            </div>
+                                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">识别风险<br>(Identify Risks)</h5>
+                                        </div>
+                                        <p class="text-gray-700 dark:text-gray-300">
+                                            识别可能影响项目的单个项目风险以及整体项目风险的来源，并记录其特征的过程。
+                                        </p>
+                                        <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                                            <span class="font-semibold">过程组：</span> 规划过程组
+                                        </div>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <div class="flex items-center mb-2">
+                                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                                <span class="font-bold text-indigo-600 dark:text-indigo-400">3</span>
+                                            </div>
+                                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">实施定性风险分析<br>(Perform Qualitative Risk Analysis)</h5>
+                                        </div>
+                                        <p class="text-gray-700 dark:text-gray-300">
+                                            通过评估单个项目风险发生的概率和影响以及其他特征，对风险进行优先级排序，从而为后续分析或行动提供基础的过程。
+                                        </p>
+                                        <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                                            <span class="font-semibold">过程组：</span> 规划过程组
+                                        </div>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <div class="flex items-center mb-2">
+                                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                                <span class="font-bold text-indigo-600 dark:text-indigo-400">4</span>
+                                            </div>
+                                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">实施定量风险分析<br>(Perform Quantitative Risk Analysis)</h5>
+                                        </div>
+                                        <p class="text-gray-700 dark:text-gray-300">
+                                            就已识别的单个项目风险和其他不确定性来源对整体项目目标的综合影响进行数值分析的过程。
+                                        </p>
+                                        <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                                            <span class="font-semibold">过程组：</span> 规划过程组
+                                        </div>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <div class="flex items-center mb-2">
+                                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                                <span class="font-bold text-indigo-600 dark:text-indigo-400">5</span>
+                                            </div>
+                                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">规划风险应对<br>(Plan Risk Responses)</h5>
+                                        </div>
+                                        <p class="text-gray-700 dark:text-gray-300">
+                                            为处理单个项目风险和整体项目风险，以及为把握机会而制定可选方案、选择应对策略并商定应对行动的过程。
+                                        </p>
+                                        <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                                            <span class="font-semibold">过程组：</span> 规划过程组
+                                        </div>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <div class="flex items-center mb-2">
+                                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                                <span class="font-bold text-indigo-600 dark:text-indigo-400">6</span>
+                                            </div>
+                                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">实施风险应对<br>(Implement Risk Responses)</h5>
+                                        </div>
+                                        <p class="text-gray-700 dark:text-gray-300">
+                                            执行商定的风险应对计划的过程。
+                                        </p>
+                                        <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                                            <span class="font-semibold">过程组：</span> 执行过程组
+                                        </div>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <div class="flex items-center mb-2">
+                                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-2">
+                                                <span class="font-bold text-indigo-600 dark:text-indigo-400">7</span>
+                                            </div>
+                                            <h5 class="font-semibold text-indigo-600 dark:text-indigo-400">监督风险<br>(Monitor Risks)</h5>
+                                        </div>
+                                        <p class="text-gray-700 dark:text-gray-300">
+                                            在整个项目期间，监督商定的风险应对计划的实施、跟踪已识别风险、识别和分析新风险，以及评估风险管理有效性的过程。
+                                        </p>
+                                        <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                                            <span class="font-semibold">过程组：</span> 监控过程组
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.2.2 过程之间的关系</h3>
+                            
+                            <div class="mb-6">
+                                <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg mb-4">
+                                    <p class="text-gray-700 dark:text-gray-300">
+                                        项目风险管理的七个过程是相互关联的，它们共同构成了项目风险管理的完整体系：
+                                    </p>
+                                    <ul class="list-disc pl-6 space-y-2 mt-2 text-gray-700 dark:text-gray-300">
+                                        <li><span class="font-medium">规划风险管理</span>为后续所有风险管理活动奠定基础，确定风险管理的方法和资源。</li>
+                                        <li><span class="font-medium">识别风险</span>是发现可能影响项目的各种风险的过程，为后续分析提供输入。</li>
+                                        <li><span class="font-medium">定性风险分析</span>对风险进行初步评估和优先级排序，帮助确定哪些风险需要更详细的分析。</li>
+                                        <li><span class="font-medium">定量风险分析</span>对风险进行数值分析，评估其对项目目标的综合影响。</li>
+                                        <li><span class="font-medium">规划风险应对</span>根据前面的分析结果，制定应对策略和具体行动计划。</li>
+                                        <li><span class="font-medium">实施风险应对</span>是执行已规划的风险应对措施的过程。</li>
+                                        <li><span class="font-medium">监督风险</span>贯穿整个项目生命周期，持续评估风险状态，并在必要时触发其他风险管理过程。</li>
+                                    </ul>
+                                </div>
+                                
+                                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                    这些过程不是一次性的，而是在整个项目生命周期中反复进行。随着项目的推进，可能会识别出新的风险，需要对已有风险进行重新评估，或者调整风险应对策略。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="section-plan" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">15.3 规划风险管理</h2>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.3.1 过程概述</h3>
+                            
+                            <div class="mb-6">
+                                <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg mb-4">
+                                    <p class="font-medium text-lg text-indigo-800 dark:text-indigo-300">定义：</p>
+                                    <p class="text-gray-700 dark:text-gray-300">规划风险管理是确定如何进行项目风险管理活动的过程。</p>
+                                    
+                                    <div class="mt-4">
+                                        <p class="font-medium text-lg text-indigo-800 dark:text-indigo-300">主要作用：</p>
+                                        <ul class="list-disc pl-6 space-y-1 text-gray-700 dark:text-gray-300">
+                                            <li>确保风险管理活动的类型、级别和可见度与项目风险和项目对组织的重要性相匹配</li>
+                                            <li>为风险管理活动提供充足的资源和时间</li>
+                                            <li>建立风险管理活动的共识基础</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                                    <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-blue-700 dark:text-blue-400 mb-2">输入</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>项目章程</li>
+                                            <li>项目管理计划</li>
+                                            <li>项目文件</li>
+                                            <li>事业环境因素</li>
+                                            <li>组织过程资产</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-purple-700 dark:text-purple-400 mb-2">工具与技术</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>专家判断</li>
+                                            <li>数据分析</li>
+                                            <li>会议</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-green-700 dark:text-green-400 mb-2">输出</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>风险管理计划</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.3.2 风险管理计划</h3>
+                            
+                            <div class="mb-6">
+                                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                    风险管理计划是项目管理计划的组成部分，描述将如何开展风险管理活动。风险管理计划可能包括以下内容：
+                                </p>
+                                
+                                <div class="overflow-x-auto">
+                                    <table class="min-w-full bg-white dark:bg-gray-700 rounded-lg overflow-hidden">
+                                        <thead class="bg-indigo-100 dark:bg-indigo-900">
+                                            <tr>
+                                                <th class="px-4 py-3 text-left text-sm font-semibold text-indigo-700 dark:text-indigo-300">组成部分</th>
+                                                <th class="px-4 py-3 text-left text-sm font-semibold text-indigo-700 dark:text-indigo-300">描述</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
+                                            <tr>
+                                                <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">风险策略</td>
+                                                <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">描述管理项目风险的总体方法</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">方法论</td>
+                                                <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">定义风险管理过程中使用的具体方法、工具和数据来源</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">角色与职责</td>
+                                                <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">定义风险管理团队成员及其职责</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">资金</td>
+                                                <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">确定风险管理活动所需的资金，并建立应急储备和管理储备</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">时间安排</td>
+                                                <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">定义项目生命周期中开展风险管理过程的时间和频率</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">风险类别</td>
+                                                <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">提供风险分类结构，通常采用风险分解结构(RBS)的形式</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">风险概率与影响定义</td>
+                                                <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">为确保质量和可信度而定义的风险概率和影响水平</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">干系人风险偏好</td>
+                                                <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">记录主要干系人对风险的态度</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">报告格式</td>
+                                                <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">定义如何记录、分析和沟通风险管理过程的结果</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">跟踪</td>
+                                                <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">记录风险管理活动并评估风险管理过程的有效性</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="section-identify" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">15.4 识别风险</h2>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.4.1 过程概述</h3>
+                            
+                            <div class="mb-6">
+                                <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg mb-4">
+                                    <p class="font-medium text-lg text-indigo-800 dark:text-indigo-300">定义：</p>
+                                    <p class="text-gray-700 dark:text-gray-300">识别风险是识别可能影响项目的单个项目风险以及整体项目风险的来源，并记录其特征的过程。</p>
+                                    
+                                    <div class="mt-4">
+                                        <p class="font-medium text-lg text-indigo-800 dark:text-indigo-300">主要作用：</p>
+                                        <ul class="list-disc pl-6 space-y-1 text-gray-700 dark:text-gray-300">
+                                            <li>记录现有的单个项目风险</li>
+                                            <li>确定整体项目风险的来源</li>
+                                            <li>将风险信息汇总到风险登记册中</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                                    <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-blue-700 dark:text-blue-400 mb-2">输入</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>项目管理计划</li>
+                                            <li>项目文件</li>
+                                            <li>协议</li>
+                                            <li>采购文档</li>
+                                            <li>事业环境因素</li>
+                                            <li>组织过程资产</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-purple-700 dark:text-purple-400 mb-2">工具与技术</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>专家判断</li>
+                                            <li>数据收集</li>
+                                            <li>数据分析</li>
+                                            <li>人际关系与团队技能</li>
+                                            <li>提示清单</li>
+                                            <li>会议</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-green-700 dark:text-green-400 mb-2">输出</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>风险登记册</li>
+                                            <li>风险报告</li>
+                                            <li>项目文件更新</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.4.2 风险识别技术</h3>
+                            
+                            <div class="mb-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">头脑风暴</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                            由项目团队成员和各领域专家组成的跨职能小组，在专家引导下集思广益，识别项目风险。
+                                        </p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">德尔菲技术</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                            匿名征求风险专家的意见，由协调人汇总结果并再次分发给专家进行评论，直到达成共识。
+                                        </p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">访谈</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                            通过与经验丰富的项目参与者、干系人和主题专家进行一对一交谈，获取风险信息。
+                                        </p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">根本原因分析</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                            识别导致问题的根本原因，并制定预防行动，防止类似问题再次发生。
+                                        </p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">SWOT分析</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                            分析项目的优势、劣势、机会和威胁，帮助全面了解项目风险。
+                                        </p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">核对单分析</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                            基于历史信息和以往项目积累的知识，开发风险识别核对单，用于系统化地识别风险。
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-3">风险登记册</h4>
+                                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                        风险识别过程的主要输出是风险登记册，它包含已识别风险的详细信息：
+                                    </p>
+                                    
+                                    <div class="overflow-x-auto">
+                                        <table class="min-w-full bg-white dark:bg-gray-700 rounded-lg overflow-hidden">
+                                            <thead class="bg-indigo-100 dark:bg-indigo-900">
+                                                <tr>
+                                                    <th class="px-4 py-3 text-left text-sm font-semibold text-indigo-700 dark:text-indigo-300">组成部分</th>
+                                                    <th class="px-4 py-3 text-left text-sm font-semibold text-indigo-700 dark:text-indigo-300">描述</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
+                                                <tr>
+                                                    <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">风险ID</td>
+                                                    <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">每个风险的唯一标识符</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">风险描述</td>
+                                                    <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">使用"原因-风险-影响"格式描述风险事件</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">风险类别</td>
+                                                    <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">基于RBS对风险进行分类</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">风险触发因素</td>
+                                                    <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">表明风险即将发生的事件或情况</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">风险责任人</td>
+                                                    <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">负责监控和应对风险的指定人员</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="section-qualitative" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">15.5 实施定性风险分析</h2>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.5.1 过程概述</h3>
+                            
+                            <div class="mb-6">
+                                <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg mb-4">
+                                    <p class="font-medium text-lg text-indigo-800 dark:text-indigo-300">定义：</p>
+                                    <p class="text-gray-700 dark:text-gray-300">实施定性风险分析是通过评估单个项目风险发生的概率和影响以及其他特征，对风险进行优先级排序，从而为后续分析或行动提供基础的过程。</p>
+                                    
+                                    <div class="mt-4">
+                                        <p class="font-medium text-lg text-indigo-800 dark:text-indigo-300">主要作用：</p>
+                                        <ul class="list-disc pl-6 space-y-1 text-gray-700 dark:text-gray-300">
+                                            <li>集中精力处理高优先级风险</li>
+                                            <li>确定哪些风险需要进一步定量分析</li>
+                                            <li>为风险应对规划提供基础</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                                    <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-blue-700 dark:text-blue-400 mb-2">输入</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>项目管理计划</li>
+                                            <li>项目文件</li>
+                                            <li>事业环境因素</li>
+                                            <li>组织过程资产</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-purple-700 dark:text-purple-400 mb-2">工具与技术</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>专家判断</li>
+                                            <li>数据收集</li>
+                                            <li>数据分析</li>
+                                            <li>人际关系与团队技能</li>
+                                            <li>风险分类</li>
+                                            <li>数据表现</li>
+                                            <li>会议</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-green-700 dark:text-green-400 mb-2">输出</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>项目文件更新</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.5.2 概率和影响矩阵</h3>
+                            
+                            <div class="mb-6">
+                                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                    概率和影响矩阵是定性风险分析中最常用的工具之一，它通过评估每个风险的概率和影响来确定风险的优先级。
+                                </p>
+                                
+                                <div class="flex justify-center mb-6">
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md">
+                                        <table class="border-collapse">
+                                            <thead>
+                                                <tr>
+                                                    <th class="border border-gray-300 dark:border-gray-600 p-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300" rowspan="2" colspan="2"></th>
+                                                    <th class="border border-gray-300 dark:border-gray-600 p-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-center" colspan="5">影响</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="border border-gray-300 dark:border-gray-600 p-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-center">很低<br>0.05</th>
+                                                    <th class="border border-gray-300 dark:border-gray-600 p-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-center">低<br>0.1</th>
+                                                    <th class="border border-gray-300 dark:border-gray-600 p-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-center">中<br>0.2</th>
+                                                    <th class="border border-gray-300 dark:border-gray-600 p-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-center">高<br>0.4</th>
+                                                    <th class="border border-gray-300 dark:border-gray-600 p-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-center">很高<br>0.8</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th class="border border-gray-300 dark:border-gray-600 p-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300" rowspan="5">概<br>率</th>
+                                                    <th class="border border-gray-300 dark:border-gray-600 p-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-center">很高<br>0.9</th>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-yellow-100 dark:bg-yellow-900/20 text-center text-gray-700 dark:text-gray-300">0.05</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-yellow-200 dark:bg-yellow-900/30 text-center text-gray-700 dark:text-gray-300">0.09</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-orange-200 dark:bg-orange-900/30 text-center text-gray-700 dark:text-gray-300">0.18</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-red-200 dark:bg-red-900/30 text-center text-gray-700 dark:text-gray-300">0.36</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-red-300 dark:bg-red-900/50 text-center text-gray-700 dark:text-gray-300">0.72</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="border border-gray-300 dark:border-gray-600 p-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-center">高<br>0.7</th>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-yellow-100 dark:bg-yellow-900/20 text-center text-gray-700 dark:text-gray-300">0.04</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-yellow-100 dark:bg-yellow-900/20 text-center text-gray-700 dark:text-gray-300">0.07</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-yellow-200 dark:bg-yellow-900/30 text-center text-gray-700 dark:text-gray-300">0.14</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-orange-200 dark:bg-orange-900/30 text-center text-gray-700 dark:text-gray-300">0.28</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-red-200 dark:bg-red-900/30 text-center text-gray-700 dark:text-gray-300">0.56</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="border border-gray-300 dark:border-gray-600 p-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-center">中<br>0.5</th>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-green-100 dark:bg-green-900/20 text-center text-gray-700 dark:text-gray-300">0.03</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-yellow-100 dark:bg-yellow-900/20 text-center text-gray-700 dark:text-gray-300">0.05</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-yellow-100 dark:bg-yellow-900/20 text-center text-gray-700 dark:text-gray-300">0.10</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-yellow-200 dark:bg-yellow-900/30 text-center text-gray-700 dark:text-gray-300">0.20</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-orange-200 dark:bg-orange-900/30 text-center text-gray-700 dark:text-gray-300">0.40</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="border border-gray-300 dark:border-gray-600 p-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-center">低<br>0.3</th>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-green-100 dark:bg-green-900/20 text-center text-gray-700 dark:text-gray-300">0.02</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-green-100 dark:bg-green-900/20 text-center text-gray-700 dark:text-gray-300">0.03</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-yellow-100 dark:bg-yellow-900/20 text-center text-gray-700 dark:text-gray-300">0.06</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-yellow-100 dark:bg-yellow-900/20 text-center text-gray-700 dark:text-gray-300">0.12</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-yellow-200 dark:bg-yellow-900/30 text-center text-gray-700 dark:text-gray-300">0.24</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="border border-gray-300 dark:border-gray-600 p-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-center">很低<br>0.1</th>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-green-100 dark:bg-green-900/20 text-center text-gray-700 dark:text-gray-300">0.01</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-green-100 dark:bg-green-900/20 text-center text-gray-700 dark:text-gray-300">0.01</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-green-100 dark:bg-green-900/20 text-center text-gray-700 dark:text-gray-300">0.02</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-yellow-100 dark:bg-yellow-900/20 text-center text-gray-700 dark:text-gray-300">0.04</td>
+                                                    <td class="border border-gray-300 dark:border-gray-600 p-2 bg-yellow-100 dark:bg-yellow-900/20 text-center text-gray-700 dark:text-gray-300">0.08</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="flex justify-center mt-3 space-x-4">
+                                            <div class="flex items-center">
+                                                <div class="w-4 h-4 bg-green-100 dark:bg-green-900/20 border border-gray-300 dark:border-gray-600 mr-1"></div>
+                                                <span class="text-xs text-gray-700 dark:text-gray-300">低风险</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <div class="w-4 h-4 bg-yellow-100 dark:bg-yellow-900/20 border border-gray-300 dark:border-gray-600 mr-1"></div>
+                                                <span class="text-xs text-gray-700 dark:text-gray-300">中风险</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <div class="w-4 h-4 bg-orange-200 dark:bg-orange-900/30 border border-gray-300 dark:border-gray-600 mr-1"></div>
+                                                <span class="text-xs text-gray-700 dark:text-gray-300">高风险</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <div class="w-4 h-4 bg-red-200 dark:bg-red-900/30 border border-gray-300 dark:border-gray-600 mr-1"></div>
+                                                <span class="text-xs text-gray-700 dark:text-gray-300">极高风险</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                    使用概率和影响矩阵的步骤：
+                                </p>
+                                
+                                <ol class="list-decimal pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+                                    <li>为每个已识别的风险评估其发生的概率</li>
+                                    <li>为每个风险评估其对项目目标的影响程度</li>
+                                    <li>根据概率和影响的乘积计算风险分值</li>
+                                    <li>根据风险分值确定风险的优先级</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="section-quantitative" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">15.6 实施定量风险分析</h2>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.6.1 过程概述</h3>
+                            
+                            <div class="mb-6">
+                                <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg mb-4">
+                                    <p class="font-medium text-lg text-indigo-800 dark:text-indigo-300">定义：</p>
+                                    <p class="text-gray-700 dark:text-gray-300">实施定量风险分析是就已识别的单个项目风险和其他不确定性来源对整体项目目标的综合影响进行数值分析的过程。</p>
+                                    
+                                    <div class="mt-4">
+                                        <p class="font-medium text-lg text-indigo-800 dark:text-indigo-300">主要作用：</p>
+                                        <ul class="list-disc pl-6 space-y-1 text-gray-700 dark:text-gray-300">
+                                            <li>量化项目整体风险敞口</li>
+                                            <li>提供额外的定量风险信息，以支持风险应对规划</li>
+                                            <li>确定成本和进度目标的现实和可实现程度</li>
+                                            <li>确定项目成功的概率</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                                    <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-blue-700 dark:text-blue-400 mb-2">输入</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>项目管理计划</li>
+                                            <li>项目文件</li>
+                                            <li>事业环境因素</li>
+                                            <li>组织过程资产</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-purple-700 dark:text-purple-400 mb-2">工具与技术</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>专家判断</li>
+                                            <li>数据收集</li>
+                                            <li>人际关系与团队技能</li>
+                                            <li>不确定性表现</li>
+                                            <li>数据分析</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-green-700 dark:text-green-400 mb-2">输出</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>项目文件更新</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.6.2 定量风险分析技术</h3>
+                            
+                            <div class="mb-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">敏感性分析</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                            确定哪些单个项目风险或其他不确定性来源对项目结果有最大的潜在影响。通常使用龙卷风图表示结果。
+                                        </p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">蒙特卡洛模拟</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                            使用计算机模型，根据已识别风险的概率分布，模拟项目结果的可能范围，生成概率分布图。
+                                        </p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">决策树分析</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                            使用决策树图表示一系列备选方案及其可能结果，计算每个备选方案的预期货币价值(EMV)。
+                                        </p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">影响图</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                            图形化表示决策及相关不确定性之间的因果关系，帮助理解风险事件之间的相互依赖关系。
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-3">定量分析结果示例</h4>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                            <h5 class="font-medium text-indigo-600 dark:text-indigo-400 mb-2">项目完成日期的概率分布</h5>
+                                            
+                                                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                                    <div class="w-full overflow-x-auto">
+                                                        <svg class="w-full" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                                                            <!-- 坐标轴 -->
+                                                            <line x1="50" y1="350" x2="750" y2="350" stroke="#6B7280" stroke-width="2"/>
+                                                            <line x1="50" y1="50" x2="50" y2="350" stroke="#6B7280" stroke-width="2"/>
+                                                            
+                                                            <!-- X轴刻度和标签 -->
+                                                            <line x1="150" y1="350" x2="150" y2="355" stroke="#6B7280" stroke-width="2"/>
+                                                            <text x="150" y="375" text-anchor="middle" fill="#6B7280">6月15日</text>
+                                                            
+                                                            <line x1="250" y1="350" x2="250" y2="355" stroke="#6B7280" stroke-width="2"/>
+                                                            <text x="250" y="375" text-anchor="middle" fill="#6B7280">6月30日</text>
+                                                            
+                                                            <line x1="350" y1="350" x2="350" y2="355" stroke="#6B7280" stroke-width="2"/>
+                                                            <text x="350" y="375" text-anchor="middle" fill="#6B7280">7月15日</text>
+                                                            
+                                                            <line x1="450" y1="350" x2="450" y2="355" stroke="#6B7280" stroke-width="2"/>
+                                                            <text x="450" y="375" text-anchor="middle" fill="#6B7280">7月31日</text>
+                                                            
+                                                            <line x1="550" y1="350" x2="550" y2="355" stroke="#6B7280" stroke-width="2"/>
+                                                            <text x="550" y="375" text-anchor="middle" fill="#6B7280">8月15日</text>
+                                                            
+                                                            <line x1="650" y1="350" x2="650" y2="355" stroke="#6B7280" stroke-width="2"/>
+                                                            <text x="650" y="375" text-anchor="middle" fill="#6B7280">8月31日</text>
+                                                            
+                                                            <!-- Y轴刻度和标签 -->
+                                                            <line x1="45" y1="300" x2="50" y2="300" stroke="#6B7280" stroke-width="2"/>
+                                                            <text x="35" y="305" text-anchor="end" fill="#6B7280">20%</text>
+                                                            
+                                                            <line x1="45" y1="250" x2="50" y2="250" stroke="#6B7280" stroke-width="2"/>
+                                                            <text x="35" y="255" text-anchor="end" fill="#6B7280">40%</text>
+                                                            
+                                                            <line x1="45" y1="200" x2="50" y2="200" stroke="#6B7280" stroke-width="2"/>
+                                                            <text x="35" y="205" text-anchor="end" fill="#6B7280">60%</text>
+                                                            
+                                                            <line x1="45" y1="150" x2="50" y2="150" stroke="#6B7280" stroke-width="2"/>
+                                                            <text x="35" y="155" text-anchor="end" fill="#6B7280">80%</text>
+                                                            
+                                                            <line x1="45" y1="100" x2="50" y2="100" stroke="#6B7280" stroke-width="2"/>
+                                                            <text x="35" y="105" text-anchor="end" fill="#6B7280">100%</text>
+                                                            
+                                                            <!-- 轴标题 -->
+                                                            <text x="400" y="395" text-anchor="middle" fill="#4B5563" font-weight="bold">项目完成日期</text>
+                                                            <text x="15" y="200" text-anchor="middle" fill="#4B5563" font-weight="bold" transform="rotate(-90, 15, 200)">完成概率</text>
+                                                            
+                                                            <!-- S曲线 - 累积概率 -->
+                                                            <path d="M 150 340 C 200 335, 250 320, 300 280 C 350 240, 400 180, 450 130 C 500 100, 550 90, 650 85" 
+                                                                  fill="none" stroke="#4F46E5" stroke-width="3"/>
+                                                            
+                                                            <!-- 目标日期线 -->
+                                                            <line x1="450" y1="50" x2="450" y2="350" stroke="#EF4444" stroke-width="2" stroke-dasharray="5,5"/>
+                                                            <text x="450" y="40" text-anchor="middle" fill="#EF4444" font-weight="bold">目标日期</text>
+                                                            
+                                                            <!-- 概率点标记 -->
+                                                            <circle cx="450" cy="130" r="5" fill="#4F46E5"/>
+                                                            <line x1="50" y1="130" x2="450" y2="130" stroke="#4F46E5" stroke-width="1" stroke-dasharray="5,5"/>
+                                                            <text x="40" y="130" text-anchor="end" fill="#4F46E5" font-weight="bold">85%</text>
+                                                            
+                                                            <!-- 图例 -->
+                                                            <rect x="600" y="50" width="140" height="70" rx="5" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+                                                            <line x1="620" y1="75" x2="650" y2="75" stroke="#4F46E5" stroke-width="3"/>
+                                                            <text x="660" y="80" fill="#4B5563">累积概率</text>
+                                                            <line x1="620" y1="105" x2="650" y2="105" stroke="#EF4444" stroke-width="2" stroke-dasharray="5,5"/>
+                                                            <text x="660" y="110" fill="#4B5563">目标日期</text>
+                                                        </svg>
+                                                    </div>
+                                                    
+                                                    <p class="text-center mt-4 text-gray-700 dark:text-gray-300">
+                                                        图15.2 项目完成日期的概率分布 - 显示在目标日期(7月31日)前完成项目的概率约为85%
+                                                    </p>
+                                                    
+                                                    <div class="mt-4 bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                                                        <h5 class="font-semibold text-blue-700 dark:text-blue-400 mb-2">分析解读</h5>
+                                                        <ul class="list-disc pl-6 text-sm text-gray-700 dark:text-gray-300">
+                                                            <li>S曲线表示项目在特定日期前完成的累积概率</li>
+                                                            <li>目标完成日期为7月31日，此时完成概率约为85%</li>
+                                                            <li>若需提高完成概率至95%以上，可能需要将项目延期至8月中旬</li>
+                                                            <li>此类分析有助于项目经理做出更明智的进度决策，并制定适当的风险应对策略</li>
+                                                            <li></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            
+                                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                                                图表显示项目在不同日期完成的概率，帮助项目经理了解进度目标的可实现性。
+                                            </p>
+                                        </div>
+                                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                            <h5 class="font-medium text-indigo-600 dark:text-indigo-400 mb-2">项目成本的概率分布</h5>
+                                            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                                <div class="w-full overflow-x-auto">
+                                                    <svg class="w-full" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                                                        <!-- 坐标轴 -->
+                                                        <line x1="50" y1="350" x2="750" y2="350" stroke="#6B7280" stroke-width="2"/>
+                                                        <line x1="50" y1="50" x2="50" y2="350" stroke="#6B7280" stroke-width="2"/>
+                                                        
+                                                        <!-- X轴刻度和标签 -->
+                                                        <line x1="150" y1="350" x2="150" y2="355" stroke="#6B7280" stroke-width="2"/>
+                                                        <text x="150" y="375" text-anchor="middle" fill="#6B7280">90万元</text>
+                                                        
+                                                        <line x1="250" y1="350" x2="250" y2="355" stroke="#6B7280" stroke-width="2"/>
+                                                        <text x="250" y="375" text-anchor="middle" fill="#6B7280">95万元</text>
+                                                        
+                                                        <line x1="350" y1="350" x2="350" y2="355" stroke="#6B7280" stroke-width="2"/>
+                                                        <text x="350" y="375" text-anchor="middle" fill="#6B7280">100万元</text>
+                                                        
+                                                        <line x1="450" y1="350" x2="450" y2="355" stroke="#6B7280" stroke-width="2"/>
+                                                        <text x="450" y="375" text-anchor="middle" fill="#6B7280">105万元</text>
+                                                        
+                                                        <line x1="550" y1="350" x2="550" y2="355" stroke="#6B7280" stroke-width="2"/>
+                                                        <text x="550" y="375" text-anchor="middle" fill="#6B7280">110万元</text>
+                                                        
+                                                        <line x1="650" y1="350" x2="650" y2="355" stroke="#6B7280" stroke-width="2"/>
+                                                        <text x="650" y="375" text-anchor="middle" fill="#6B7280">115万元</text>
+                                                        
+                                                        <!-- Y轴刻度和标签 -->
+                                                        <line x1="45" y1="300" x2="50" y2="300" stroke="#6B7280" stroke-width="2"/>
+                                                        <text x="35" y="305" text-anchor="end" fill="#6B7280">20%</text>
+                                                        
+                                                        <line x1="45" y1="250" x2="50" y2="250" stroke="#6B7280" stroke-width="2"/>
+                                                        <text x="35" y="255" text-anchor="end" fill="#6B7280">40%</text>
+                                                        
+                                                        <line x1="45" y1="200" x2="50" y2="200" stroke="#6B7280" stroke-width="2"/>
+                                                        <text x="35" y="205" text-anchor="end" fill="#6B7280">60%</text>
+                                                        
+                                                        <line x1="45" y1="150" x2="50" y2="150" stroke="#6B7280" stroke-width="2"/>
+                                                        <text x="35" y="155" text-anchor="end" fill="#6B7280">80%</text>
+                                                        
+                                                        <line x1="45" y1="100" x2="50" y2="100" stroke="#6B7280" stroke-width="2"/>
+                                                        <text x="35" y="105" text-anchor="end" fill="#6B7280">100%</text>
+                                                        
+                                                        <!-- 轴标题 -->
+                                                        <text x="400" y="395" text-anchor="middle" fill="#4B5563" font-weight="bold">项目总成本</text>
+                                                        <text x="15" y="200" text-anchor="middle" fill="#4B5563" font-weight="bold" transform="rotate(-90, 15, 200)">完成概率</text>
+                                                        
+                                                        <!-- 柱状图 - 频率分布 -->
+                                                        <rect x="130" y="320" width="40" height="30" fill="#C7D2FE" stroke="#6366F1" stroke-width="1"/>
+                                                        <rect x="180" y="300" width="40" height="50" fill="#C7D2FE" stroke="#6366F1" stroke-width="1"/>
+                                                        <rect x="230" y="270" width="40" height="80" fill="#C7D2FE" stroke="#6366F1" stroke-width="1"/>
+                                                        <rect x="280" y="230" width="40" height="120" fill="#C7D2FE" stroke="#6366F1" stroke-width="1"/>
+                                                        <rect x="330" y="200" width="40" height="150" fill="#C7D2FE" stroke="#6366F1" stroke-width="1"/>
+                                                        <rect x="380" y="220" width="40" height="130" fill="#C7D2FE" stroke="#6366F1" stroke-width="1"/>
+                                                        <rect x="430" y="250" width="40" height="100" fill="#C7D2FE" stroke="#6366F1" stroke-width="1"/>
+                                                        <rect x="480" y="280" width="40" height="70" fill="#C7D2FE" stroke="#6366F1" stroke-width="1"/>
+                                                        <rect x="530" y="310" width="40" height="40" fill="#C7D2FE" stroke="#6366F1" stroke-width="1"/>
+                                                        <rect x="580" y="330" width="40" height="20" fill="#C7D2FE" stroke="#6366F1" stroke-width="1"/>
+                                                        <rect x="630" y="340" width="40" height="10" fill="#C7D2FE" stroke="#6366F1" stroke-width="1"/>
+                                                        
+                                                        <!-- S曲线 - 累积概率 -->
+                                                        <path d="M 150 340 C 200 330, 250 310, 300 270 C 350 230, 400 170, 450 120 C 500 90, 550 80, 650 75" 
+                                                              fill="none" stroke="#4F46E5" stroke-width="3"/>
+                                                        
+                                                        <!-- 预算线 -->
+                                                        <line x1="350" y1="50" x2="350" y2="350" stroke="#EF4444" stroke-width="2" stroke-dasharray="5,5"/>
+                                                        <text x="350" y="40" text-anchor="middle" fill="#EF4444" font-weight="bold">预算</text>
+                                                        
+                                                        <!-- 概率点标记 -->
+                                                        <circle cx="350" cy="270" r="5" fill="#4F46E5"/>
+                                                        <line x1="50" y1="270" x2="350" y2="270" stroke="#4F46E5" stroke-width="1" stroke-dasharray="5,5"/>
+                                                        <text x="40" y="270" text-anchor="end" fill="#4F46E5" font-weight="bold">40%</text>
+                                                        
+                                                        <!-- 图例 -->
+                                                        <rect x="600" y="50" width="140" height="90" rx="5" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+                                                        <rect x="620" y="65" width="20" height="15" fill="#C7D2FE" stroke="#6366F1" stroke-width="1"/>
+                                                        <text x="650" y="75" fill="#4B5563">频率分布</text>
+                                                        <line x1="620" y1="95" x2="650" y2="95" stroke="#4F46E5" stroke-width="3"/>
+                                                        <text x="660" y="100" fill="#4B5563">累积概率</text>
+                                                        <line x1="620" y1="120" x2="650" y2="120" stroke="#EF4444" stroke-width="2" stroke-dasharray="5,5"/>
+                                                        <text x="660" y="125" fill="#4B5563">预算线</text>
+                                                    </svg>
+                                                </div>
+                                                
+                                                <p class="text-center mt-4 text-gray-700 dark:text-gray-300">
+                                                    图15.3 项目成本的概率分布 - 显示在预算(100万元)内完成项目的概率仅为40%
+                                                </p>
+                                                
+                                                <div class="mt-4 bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                                                    <h5 class="font-semibold text-blue-700 dark:text-blue-400 mb-2">分析解读</h5>
+                                                    <ul class="list-disc pl-6 text-sm text-gray-700 dark:text-gray-300">
+                                                        <li>柱状图表示项目在各成本区间的频率分布</li>
+                                                        <li>S曲线表示项目在特定成本内完成的累积概率</li>
+                                                        <li>当前预算为100万元，在此预算内完成项目的概率仅为40%</li>
+                                                        <li>若需提高完成概率至80%，预算可能需要增加至约105万元</li>
+                                                        <li>此类分析有助于项目经理评估预算的充分性，并制定适当的成本风险应对策略</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                                                    图表项目在不同成本水平下完成的概率分布。
+                                                </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="section-response" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">15.7 规划风险应对</h2>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.7.1 过程概述</h3>
+                            
+                            <div class="mb-6">
+                                <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg mb-4">
+                                    <p class="font-medium text-lg text-indigo-800 dark:text-indigo-300">定义：</p>
+                                    <p class="text-gray-700 dark:text-gray-300">规划风险应对是为处理整体项目风险敞口以及应对单个项目风险而制定可选方案、选择策略并商定行动的过程。</p>
+                                    
+                                    <div class="mt-4">
+                                        <p class="font-medium text-lg text-indigo-800 dark:text-indigo-300">主要作用：</p>
+                                        <ul class="list-disc pl-6 space-y-1 text-gray-700 dark:text-gray-300">
+                                            <li>确定适当的风险应对方式</li>
+                                            <li>分配资源和活动到项目管理计划中</li>
+                                            <li>降低负面风险的威胁，提高正面风险的机会</li>
+                                            <li>减少整体项目风险敞口</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                                    <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-blue-700 dark:text-blue-400 mb-2">输入</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>项目管理计划</li>
+                                            <li>项目文件</li>
+                                            <li>事业环境因素</li>
+                                            <li>组织过程资产</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-purple-700 dark:text-purple-400 mb-2">工具与技术</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>专家判断</li>
+                                            <li>数据收集</li>
+                                            <li>人际关系与团队技能</li>
+                                            <li>威胁应对策略</li>
+                                            <li>机会应对策略</li>
+                                            <li>应急应对策略</li>
+                                            <li>整体项目风险应对策略</li>
+                                            <li>数据分析</li>
+                                            <li>决策</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-green-700 dark:text-green-400 mb-2">输出</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>变更请求</li>
+                                            <li>项目管理计划更新</li>
+                                            <li>项目文件更新</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.7.2 风险应对策略</h3>
+                            
+                            <div class="mb-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                    <div>
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-3">威胁应对策略</h4>
+                                        <div class="space-y-4">
+                                            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-red-500">
+                                                <h5 class="font-medium text-red-600 dark:text-red-400 mb-1">规避</h5>
+                                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                                    完全消除威胁或保护项目不受威胁影响。可能包括改变项目管理计划、更改目标或改变项目范围。
+                                                </p>
+                                            </div>
+                                            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-orange-500">
+                                                <h5 class="font-medium text-orange-600 dark:text-orange-400 mb-1">转移</h5>
+                                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                                    将风险影响及应对责任转移给第三方。通常涉及支付风险溢价，如保险、履约保证、担保等。
+                                                </p>
+                                            </div>
+                                            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-yellow-500">
+                                                <h5 class="font-medium text-yellow-600 dark:text-yellow-400 mb-1">减轻</h5>
+                                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                                    降低风险概率和/或影响至可接受的阈值。采取提前行动降低风险发生的概率或影响比事后处理更有效。
+                                                </p>
+                                            </div>
+                                            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-gray-500">
+                                                <h5 class="font-medium text-gray-600 dark:text-gray-400 mb-1">接受</h5>
+                                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                                    承认风险的存在但不采取任何行动，除非风险发生。适用于无法或不值得采取其他策略的低优先级风险。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-3">机会应对策略</h4>
+                                        <div class="space-y-4">
+                                            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-green-500">
+                                                <h5 class="font-medium text-green-600 dark:text-green-400 mb-1">开拓</h5>
+                                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                                    消除不确定性，确保机会一定会实现。可能包括分配更有才能的资源以缩短完成时间。
+                                                </p>
+                                            </div>
+                                            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-teal-500">
+                                                <h5 class="font-medium text-teal-600 dark:text-teal-400 mb-1">分享</h5>
+                                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                                    将部分或全部机会的所有权转移给第三方，使其能够更好地捕获机会。例如合资企业、风险共担伙伴关系等。
+                                                </p>
+                                            </div>
+                                            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-blue-500">
+                                                <h5 class="font-medium text-blue-600 dark:text-blue-400 mb-1">提高</h5>
+                                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                                    提高机会发生的概率和/或积极影响。识别并最大化关键驱动因素，提高机会实现的可能性。
+                                                </p>
+                                            </div>
+                                            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-gray-500">
+                                                <h5 class="font-medium text-gray-600 dark:text-gray-400 mb-1">接受</h5>
+                                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                                    愿意在机会出现时利用它，但不主动追求。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-3">应急应对策略</h4>
+                                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                        应急应对是为应对已识别风险的发生而预先定义的行动，只有在特定预定义的触发条件发生时才会使用。
+                                    </p>
+                                    
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow mb-6">
+                                        <h5 class="font-medium text-indigo-600 dark:text-indigo-400 mb-2">应急储备</h5>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
+                                            为了管理已识别的风险而预留的时间和成本，用于项目计划内的已知风险。
+                                        </p>
+                                        <div class="flex flex-col md:flex-row gap-4">
+                                            <div class="flex-1 bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded-lg">
+                                                <h6 class="font-medium text-indigo-700 dark:text-indigo-300 text-sm mb-1">时间储备</h6>
+                                                <p class="text-xs text-gray-600 dark:text-gray-400">
+                                                    在项目进度中增加额外的时间缓冲，以应对可能的进度延误。
+                                                </p>
+                                            </div>
+                                            <div class="flex-1 bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded-lg">
+                                                <h6 class="font-medium text-indigo-700 dark:text-indigo-300 text-sm mb-1">成本储备</h6>
+                                                <p class="text-xs text-gray-600 dark:text-gray-400">
+                                                    在项目预算中增加额外的资金，以应对可能的成本超支。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-3">整体项目风险应对策略</h4>
+                                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                        整体项目风险应对策略旨在应对项目整体风险敞口，而不仅仅是单个风险。
+                                    </p>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-purple-500">
+                                            <h5 class="font-medium text-purple-600 dark:text-purple-400 mb-1">风险规避型策略</h5>
+                                            <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                                采用保守的方法，如减少范围、增加资源、延长时间表或采用熟悉的方法，以降低整体项目风险。
+                                            </p>
+                                        </div>
+                                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-purple-500">
+                                            <h5 class="font-medium text-purple-600 dark:text-purple-400 mb-1">风险开拓型策略</h5>
+                                            <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                                采用激进的方法，如减少时间或资源、简化流程或采用创新技术，以实现更高的效益。
+                                            </p>
+                                        </div>
+                                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-purple-500">
+                                            <h5 class="font-medium text-purple-600 dark:text-purple-400 mb-1">风险转移策略</h5>
+                                            <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                                将整个项目的责任转移给第三方，如通过固定价格合同或建立合资企业。
+                                            </p>
+                                        </div>
+                                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-purple-500">
+                                            <h5 class="font-medium text-purple-600 dark:text-purple-400 mb-1">管理储备</h5>
+                                            <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                                为应对未知风险而预留的额外时间或资金，不包含在项目基准中，需要获得批准才能使用。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="section-implement" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">15.8 实施风险应对</h2>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.8.1 过程概述</h3>
+                            
+                            <div class="mb-6">
+                                <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg mb-4">
+                                    <p class="font-medium text-lg text-indigo-800 dark:text-indigo-300">定义：</p>
+                                    <p class="text-gray-700 dark:text-gray-300">实施风险应对是执行商定的风险应对计划的过程。</p>
+                                    
+                                    <div class="mt-4">
+                                        <p class="font-medium text-lg text-indigo-800 dark:text-indigo-300">主要作用：</p>
+                                        <ul class="list-disc pl-6 space-y-1 text-gray-700 dark:text-gray-300">
+                                            <li>确保按计划执行风险应对</li>
+                                            <li>管理整体项目风险敞口</li>
+                                            <li>最小化单个项目威胁</li>
+                                            <li>最大化单个项目机会</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                                    <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-blue-700 dark:text-blue-400 mb-2">输入</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>项目管理计划</li>
+                                            <li>项目文件</li>
+                                            <li>组织过程资产</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-purple-700 dark:text-purple-400 mb-2">工具与技术</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>专家判断</li>
+                                            <li>人际关系与团队技能</li>
+                                            <li>项目管理信息系统</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-green-700 dark:text-green-400 mb-2">输出</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>变更请求</li>
+                                            <li>项目文件更新</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.8.2 实施风险应对的关键考虑因素</h3>
+                            
+                            <div class="mb-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">风险责任人的作用</h4>
+                                        <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>确保商定的风险应对按计划执行</li>
+                                            <li>监控触发条件，确定是否需要实施应急计划</li>
+                                            <li>评估风险应对的有效性</li>
+                                            <li>及时报告风险状态变化</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">实施过程中的挑战</h4>
+                                        <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>资源可用性问题</li>
+                                            <li>风险状况的变化</li>
+                                            <li>新风险的出现</li>
+                                            <li>应对策略的有效性低于预期</li>
+                                            <li>项目环境的变化</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-3">风险应对实施的最佳实践</h4>
+                                    
+                                    <div class="overflow-x-auto">
+                                        <table class="min-w-full bg-white dark:bg-gray-700 rounded-lg overflow-hidden">
+                                            <thead class="bg-indigo-100 dark:bg-indigo-900">
+                                                <tr>
+                                                    <th class="px-4 py-3 text-left text-sm font-semibold text-indigo-700 dark:text-indigo-300">最佳实践</th>
+                                                    <th class="px-4 py-3 text-left text-sm font-semibold text-indigo-700 dark:text-indigo-300">描述</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
+                                                <tr>
+                                                    <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">及时行动</td>
+                                                    <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">在适当的时机实施风险应对，不要过早或过晚</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">明确责任</td>
+                                                    <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">确保每个风险应对措施都有明确的责任人</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">持续沟通</td>
+                                                    <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">与项目团队和相关干系人保持沟通，确保所有人了解风险状况</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">灵活调整</td>
+                                                    <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">根据实际情况调整风险应对策略，不要僵化执行原计划</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">记录经验教训</td>
+                                                    <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">记录风险应对的有效性和经验教训，用于未来项目</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="section-monitor" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">15.9 监督风险</h2>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.9.1 过程概述</h3>
+                            
+                            <div class="mb-6">
+                                <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg mb-4">
+                                    <p class="font-medium text-lg text-indigo-800 dark:text-indigo-300">定义：</p>
+                                    <p class="text-gray-700 dark:text-gray-300">监督风险是在整个项目期间监督商定的风险应对计划的实施、跟踪已识别风险、识别和分析新风险以及评估风险管理有效性的过程。</p>
+                                    
+                                    <div class="mt-4">
+                                        <p class="font-medium text-lg text-indigo-800 dark:text-indigo-300">主要作用：</p>
+                                        <ul class="list-disc pl-6 space-y-1 text-gray-700 dark:text-gray-300">
+                                            <li>确保风险应对的有效实施</li>
+                                            <li>跟踪已识别风险的状态</li>
+                                            <li>识别新出现的风险</li>
+                                            <li>评估整体风险管理过程的有效性</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                                    <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-blue-700 dark:text-blue-400 mb-2">输入</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>项目管理计划</li>
+                                            <li>项目文件</li>
+                                            <li>工作绩效数据</li>
+                                            <li>工作绩效报告</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-purple-700 dark:text-purple-400 mb-2">工具与技术</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>数据分析</li>
+                                            <li>审计</li>
+                                            <li>会议</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-green-700 dark:text-green-400 mb-2">输出</h4>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>工作绩效信息</li>
+                                            <li>变更请求</li>
+                                            <li>项目管理计划更新</li>
+                                            <li>项目文件更新</li>
+                                            <li>组织过程资产更新</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.9.2 风险监督技术</h3>
+                            
+                            <div class="mb-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">风险再评估</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                            定期重新评估项目风险，识别新风险，重新评估当前风险，关闭过时风险。可以在项目例会、阶段评审或特定里程碑进行。
+                                        </p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">风险审计</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                            检查和记录风险应对措施的有效性以及风险管理过程的有效性。由项目经理、风险管理团队或外部审计人员执行。
+                                        </p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">偏差和趋势分析</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                            比较计划结果与实际结果，确定偏差并分析趋势。可以使用挣值分析、进度绩效分析和成本绩效分析等技术。
+                                        </p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow border-l-4 border-indigo-500">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">技术绩效测量</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                            将项目执行期间的技术成就与项目管理计划中的技术成就进度表进行比较。偏差可能表明项目面临技术风险。
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-3">风险监督的关键输出</h4>
+                                    
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow mb-6">
+                                        <h5 class="font-medium text-indigo-600 dark:text-indigo-400 mb-2">工作绩效信息</h5>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
+                                            关于风险管理活动有效性的信息，包括：
+                                        </p>
+                                        <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>风险应对的状态</li>
+                                            <li>已识别风险的状态和趋势</li>
+                                            <li>新识别风险的详情</li>
+                                            <li>风险管理过程的有效性</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                            <h5 class="font-medium text-indigo-600 dark:text-indigo-400 mb-2">变更请求</h5>
+                                            <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                                根据风险监督结果可能需要提出变更请求，包括纠正措施、预防措施或缺陷补救。这些变更请求通过实施整体变更控制过程进行处理。
+                                            </p>
+                                        </div>
+                                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                            <h5 class="font-medium text-indigo-600 dark:text-indigo-400 mb-2">项目文件更新</h5>
+                                            <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                                可能需要更新的项目文件包括风险登记册、风险报告、假设日志、问题日志和经验教训登记册等。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="section-summary" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">15.10 项目风险管理总结</h2>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.10.1 风险管理的关键成功因素</h3>
+                            
+                            <div class="mb-6">
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">组织支持</h4>
+                                        <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>高层管理者的支持和承诺</li>
+                                            <li>风险管理的组织文化</li>
+                                            <li>充分的资源分配</li>
+                                            <li>明确的风险管理政策和程序</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">团队能力</h4>
+                                        <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>风险意识和风险思维</li>
+                                            <li>风险管理技能和知识</li>
+                                            <li>有效的沟通和协作</li>
+                                            <li>持续学习和改进</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">过程有效性</h4>
+                                        <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>风险管理计划的适当性</li>
+                                            <li>风险识别的全面性</li>
+                                            <li>风险分析的准确性</li>
+                                            <li>风险应对的及时性</li>
+                                            <li>风险监督的持续性</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.10.2 风险管理的常见挑战与解决方案</h3>
+                            
+                            <div class="mb-6">
+                                <div class="overflow-x-auto">
+                                    <table class="min-w-full bg-white dark:bg-gray-700 rounded-lg overflow-hidden">
+                                        <thead class="bg-indigo-100 dark:bg-indigo-900">
+                                            <tr>
+                                                <th class="px-4 py-3 text-left text-sm font-semibold text-indigo-700 dark:text-indigo-300">常见挑战</th>
+                                                <th class="px-4 py-3 text-left text-sm font-semibold text-indigo-700 dark:text-indigo-300">解决方案</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
+                                            <tr>
+                                                <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">风险意识不足</td>
+                                                <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">
+                                                    <ul class="list-disc pl-5 space-y-1">
+                                                        <li>提供风险管理培训</li>
+                                                        <li>分享风险管理的成功案例</li>
+                                                        <li>在项目例会中强调风险讨论</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">资源限制</td>
+                                                <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">
+                                                    <ul class="list-disc pl-5 space-y-1">
+                                                        <li>根据项目规模和复杂性调整风险管理活动</li>
+                                                        <li>优先关注高影响风险</li>
+                                                        <li>利用现有工具和模板</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">风险识别不全面</td>
+                                                <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">
+                                                    <ul class="list-disc pl-5 space-y-1">
+                                                        <li>使用多种风险识别技术</li>
+                                                        <li>邀请不同领域的专家参与</li>
+                                                        <li>参考历史项目的风险清单</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">风险应对不及时</td>
+                                                <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">
+                                                    <ul class="list-disc pl-5 space-y-1">
+                                                        <li>明确风险责任人</li>
+                                                        <li>设置风险触发条件和预警机制</li>
+                                                        <li>定期审查风险状态</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">风险管理流于形式</td>
+                                                <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">
+                                                    <ul class="list-disc pl-5 space-y-1">
+                                                        <li>将风险管理融入项目日常工作</li>
+                                                        <li>展示风险管理的价值和成效</li>
+                                                        <li>简化风险管理流程，提高实用性</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.10.3 风险管理的最佳实践</h3>
+                            
+                            <div class="mb-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">项目启动阶段</h4>
+                                        <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>制定适合项目的风险管理计划</li>
+                                            <li>明确风险管理角色和责任</li>
+                                            <li>建立风险分类结构</li>
+                                            <li>确定风险阈值和风险偏好</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">项目规划阶段</h4>
+                                        <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>全面识别项目风险</li>
+                                            <li>进行定性和定量风险分析</li>
+                                            <li>制定风险应对计划</li>
+                                            <li>将风险应对措施整合到项目计划中</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">项目执行阶段</h4>
+                                        <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>及时实施风险应对措施</li>
+                                            <li>持续监控已识别风险</li>
+                                            <li>识别和分析新出现的风险</li>
+                                            <li>评估风险应对的有效性</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">项目收尾阶段</h4>
+                                        <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>总结风险管理经验教训</li>
+                                            <li>评估风险管理过程的有效性</li>
+                                            <li>记录风险管理成果和价值</li>
+                                            <li>更新组织风险管理资产</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="section-resources" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">15.11 风险管理资源</h2>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.11.1 风险管理模板</h3>
+                            
+                            <div class="mb-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">风险管理计划模板</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
+                                            用于定义项目风险管理活动的方法、工具和流程。
+                                        </p>
+                                        <a href="#" class="inline-flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300">
+                                            <span>下载模板</span>
+                                            <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clip-rule="evenodd"></path></svg>
+                                        </a>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">风险登记册模板</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
+                                            用于记录已识别风险的详细信息、分析结果和应对措施。
+                                        </p>
+                                        <a href="#" class="inline-flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300">
+                                            <span>下载模板</span>
+                                            <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clip-rule="evenodd"></path></svg>
+                                        </a>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">风险报告模板</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
+                                            用于向项目干系人报告风险状态和风险管理活动的进展。
+                                        </p>
+                                        <a href="#" class="inline-flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300">
+                                            <span>下载模板</span>
+                                            <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clip-rule="evenodd"></path></svg>
+                                        </a>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">风险审计清单</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
+                                            用于评估风险管理过程的有效性和风险应对措施的实施情况。
+                                        </p>
+                                        <a href="#" class="inline-flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300">
+                                            <span>下载模板</span>
+                                            <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clip-rule="evenodd"></path></svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-500">15.11.2 推荐阅读</h3>
+                            
+                            <div class="mb-6">
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">书籍</h4>
+                                        <ul class="list-disc pl-5 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>《项目管理知识体系指南》(PMBOK® Guide) - 第六版</li>
+                                            <li>《风险管理：实用工具与技术》- David Hillson</li>
+                                            <li>《项目风险管理：过程、技术与洞察》- Chris Chapman, Stephen Ward</li>
+                                            <li>《风险管理实践指南》- PMI</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">标准与框架</h4>
+                                        <ul class="list-disc pl-5 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                            <li>ISO 31000:2018 风险管理指南</li>
+                                            <li>COSO 企业风险管理框架</li>
+                                            <li>PRINCE2 风险管理方法</li>
+                                            <li>NIST 风险管理框架</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">在线资源</h4>
+                                        <ul class="list-disc pl-5 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                            <li><a href="#" class="text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300">项目管理协会 (PMI)</a></li>
+                                            <li><a href="#" class="text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300">国际风险管理协会 (IRM)</a></li>
+                                            <li><a href="#" class="text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300">风险与保险管理协会 (RIMS)</a></li>
+                                            <li><a href="#" class="text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300">ProjectManagement.com 风险管理资源</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mt-12 mb-8">
+                            <a href="14Project Communications Management.html" class="flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                                <i class="fas fa-arrow-left mr-2"></i>
+                                上一章：项目沟通管理
+                            </a>
+                            <a href="16Project Procurement Management.html" class="flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                                下一章：项目采购管理
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div> 
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </main>
+    
+    <!-- 页脚 -->
+    <footer class="bg-white dark:bg-gray-800 text-gray-800 dark:text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold">项目管理知识体系</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2">资源管理是项目成功的关键因素</p>
+                </div>
+                <div>
+                    <ul class="flex space-x-4">
+                        <li><a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">首页</a></li>
+                        <li><a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">知识领域</a></li>
+                        <li><a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">过程组</a></li>
+                        <li><a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-300 dark:border-gray-700 mt-8 pt-8 text-center text-gray-600 dark:text-gray-400">
+                <p>&copy; 2023 项目管理知识体系 | 保留所有权利</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 暗黑模式切换
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const html = document.documentElement;
+        
+        // 检查本地存储中的主题偏好
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+            darkModeToggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            darkModeToggle.checked = false;
+        }
+        
+        // 监听切换事件
+        darkModeToggle.addEventListener('change', function() {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            }
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 移动端菜单
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

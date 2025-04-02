@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第18章 项目绩效域 | 项目管理知识体系</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        .sidebar-item.active {
+            border-left: 4px solid #6366F1;
+            background-color: rgba(99, 102, 241, 0.1);
+        }
+        .dark .sidebar-item.active {
+            background-color: rgba(99, 102, 241, 0.2);
+        }
+        .transition-colors {
+            transition-property: background-color, border-color, color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white">
+    <!-- 导航栏 -->
+    <nav class="bg-white dark:bg-gray-800 shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold text-indigo-600 dark:text-indigo-400">项目管理知识体系</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">首页</a>
+                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">知识领域</a>
+                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">过程组</a>
+                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">工具与技术</a>
+                    <button id="dark-mode-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-300"></i>
+                    </button>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 dark:text-gray-300 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- 移动端菜单 -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="index.html" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">首页</a>
+                <a href="#" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">知识领域</a>
+                <a href="#" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">过程组</a>
+                <a href="#" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">工具与技术</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex flex-col md:flex-row">
+            <!-- 侧边栏 -->
+            <div class="md:w-1/4 mb-6 md:mb-0 md:pr-6">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 sticky top-4">
+                    <h2 class="text-xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">第18章 项目绩效域 </h2>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#section-intro" class="sidebar-item block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                18.1 引言
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#section-domains" class="sidebar-item block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                18.2 项目绩效域
+                            </a>
+                            <ul class="pl-4 mt-2 space-y-1">
+                                <li>
+                                    <a href="#section-stakeholders" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        18.2.1 干系人
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section-team" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        18.2.2 团队
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section-development" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        18.2.3 开发方法和生命周期
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section-planning" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        18.2.4 规划
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section-work" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        18.2.5 项目工作
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section-delivery" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        18.2.6 交付
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section-measurement" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        18.2.7 测量
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section-uncertainty" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        18.2.8 不确定性
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#section-interaction" class="sidebar-item block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                18.3 项目绩效域之间的相互作用
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#section-summary" class="sidebar-item block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                18.4 总结
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 内容区域 -->
+            <div class="md:w-3/4">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <div class="mb-8">
+                        <h1 class="text-4xl font-bold mb-4 text-indigo-700 dark:text-indigo-400">第18章 项目绩效域</h1>
+                        <p class="text-gray-600 dark:text-gray-400 text-lg">Project Performance Domains</p>
+                    </div>
+                    
+                    <div id="section-intro" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">18.1 引言</h2>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 mb-6">
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">项目绩效域是成功交付项目成果和实现预期价值所必需的关键领域。它们提供了一个全面的视角，帮助项目团队关注项目成功的各个重要方面。</p>
+                            
+                            <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-5 shadow-md">
+                                <div class="flex items-center mb-3">
+                                    <i class="fas fa-lightbulb text-indigo-500 mr-2 text-xl"></i>
+                                    <h3 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400">项目绩效域的价值</h3>
+                                </div>
+                                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                        <span>提供以结果为导向的项目管理框架</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                        <span>关注项目成功的关键领域</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                        <span>帮助项目团队全面考虑项目管理的各个方面</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                        <span>促进项目成果的成功交付和价值实现</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="section-domains" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">18.2 项目绩效域</h2>
+                        
+                        <p class="text-gray-700 dark:text-gray-300 mb-6">本书将项目管理活动组织为以下八个绩效域：</p>
+                        
+                        <!-- 绩效域概览 -->
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                            <a href="#section-stakeholders" class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 shadow-md border border-blue-200 dark:border-blue-800 hover:shadow-lg transition-shadow">
+                                <div class="flex flex-col items-center text-center">
+                                    <i class="fas fa-users text-blue-500 text-2xl mb-2"></i>
+                                    <h3 class="font-semibold text-blue-700 dark:text-blue-400">干系人</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Stakeholders</p>
+                                </div>
+                            </a>
+                            <a href="#section-team" class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4 shadow-md border border-purple-200 dark:border-purple-800 hover:shadow-lg transition-shadow">
+                                <div class="flex flex-col items-center text-center">
+                                    <i class="fas fa-user-friends text-purple-500 text-2xl mb-2"></i>
+                                    <h3 class="font-semibold text-purple-700 dark:text-purple-400">团队</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Team</p>
+                                </div>
+                            </a>
+                            <a href="#section-development" class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 shadow-md border border-green-200 dark:border-green-800 hover:shadow-lg transition-shadow">
+                                <div class="flex flex-col items-center text-center">
+                                    <i class="fas fa-code-branch text-green-500 text-2xl mb-2"></i>
+                                    <h3 class="font-semibold text-green-700 dark:text-green-400">开发方法</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Development Approach</p>
+                                </div>
+                            </a>
+                            <a href="#section-planning" class="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-4 shadow-md border border-yellow-200 dark:border-yellow-800 hover:shadow-lg transition-shadow">
+                                <div class="flex flex-col items-center text-center">
+                                    <i class="fas fa-tasks text-yellow-500 text-2xl mb-2"></i>
+                                    <h3 class="font-semibold text-yellow-700 dark:text-yellow-400">规划</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Planning</p>
+                                </div>
+                            </a>
+                            <a href="#section-work" class="bg-red-50 dark:bg-red-900/20 rounded-lg p-4 shadow-md border border-red-200 dark:border-red-800 hover:shadow-lg transition-shadow">
+                                <div class="flex flex-col items-center text-center">
+                                    <i class="fas fa-briefcase text-red-500 text-2xl mb-2"></i>
+                                    <h3 class="font-semibold text-red-700 dark:text-red-400">项目工作</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Project Work</p>
+                                </div>
+                            </a>
+                            <a href="#section-delivery" class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4 shadow-md border border-indigo-200 dark:border-indigo-800 hover:shadow-lg transition-shadow">
+                                <div class="flex flex-col items-center text-center">
+                                    <i class="fas fa-truck text-indigo-500 text-2xl mb-2"></i>
+                                    <h3 class="font-semibold text-indigo-700 dark:text-indigo-400">交付</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Delivery</p>
+                                </div>
+                            </a>
+                            <a href="#section-measurement" class="bg-pink-50 dark:bg-pink-900/20 rounded-lg p-4 shadow-md border border-pink-200 dark:border-pink-800 hover:shadow-lg transition-shadow">
+                                <div class="flex flex-col items-center text-center">
+                                    <i class="fas fa-chart-line text-pink-500 text-2xl mb-2"></i>
+                                    <h3 class="font-semibold text-pink-700 dark:text-pink-400">测量</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Measurement</p>
+                                </div>
+                            </a>
+                            <a href="#section-uncertainty" class="bg-teal-50 dark:bg-teal-900/20 rounded-lg p-4 shadow-md border border-teal-200 dark:border-teal-800 hover:shadow-lg transition-shadow">
+                                <div class="flex flex-col items-center text-center">
+                                    <i class="fas fa-question-circle text-teal-500 text-2xl mb-2"></i>
+                                    <h3 class="font-semibold text-teal-700 dark:text-teal-400">不确定性</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Uncertainty</p>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <!-- 绩效域详细内容 -->
+                        <div id="section-stakeholders" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-users text-blue-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-blue-700 dark:text-blue-400">18.2.1 干系人 (Stakeholders)</h3>
+                            </div>
+                            
+                            <div class="border-l-4 border-blue-500 pl-4 mb-4">
+                                <p class="text-gray-700 dark:text-gray-300">该绩效域关注与项目相关的个人、群体或组织，以及如何有效地与他们互动和合作。</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">关键方面</h4>
+                                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1 mr-2"></i>
+                                        <span>识别干系人及其需求和期望。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1 mr-2"></i>
+                                        <span>建立和维护积极的干系人关系。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1 mr-2"></i>
+                                        <span>管理干系人的期望。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1 mr-2"></i>
+                                        <span>促进干系人的参与和支持。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1 mr-2"></i>
+                                        <span>处理干系人的冲突和问题。</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
+                                <h4 class="font-semibold text-blue-700 dark:text-blue-400 mb-2">重要性</h4>
+                                <p class="text-gray-700 dark:text-gray-300">积极的干系人参与是项目成功的关键因素。理解和满足干系人的需求有助于确保项目目标的实现。</p>
+                            </div>
+                        </div>
+                        
+                        <div id="section-team" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-user-friends text-purple-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-purple-700 dark:text-purple-400">18.2.2 团队 (Team)</h3>
+                            </div>
+                            
+                            <div class="border-l-4 border-purple-500 pl-4 mb-4">
+                                <p class="text-gray-700 dark:text-gray-300">该绩效域关注项目团队的构建、领导、支持和发展，以实现项目目标。</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">关键方面</h4>
+                                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-purple-500 mt-1 mr-2"></i>
+                                        <span>组建和管理高效的项目团队。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-purple-500 mt-1 mr-2"></i>
+                                        <span>明确团队成员的角色和职责。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-purple-500 mt-1 mr-2"></i>
+                                        <span>促进团队合作和沟通。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-purple-500 mt-1 mr-2"></i>
+                                        <span>激励和奖励团队成员。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-purple-500 mt-1 mr-2"></i>
+                                        <span>解决团队冲突。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-purple-500 mt-1 mr-2"></i>
+                                        <span>发展团队成员的技能和能力。</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4">
+                                <h4 class="font-semibold text-purple-700 dark:text-purple-400 mb-2">重要性</h4>
+                                <p class="text-gray-700 dark:text-gray-300">一个高效的团队能够有效地执行项目工作，交付高质量的成果。</p>
+                            </div>
+                        </div>
+                        
+                        <div id="section-development" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-code-branch text-green-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-green-700 dark:text-green-400">18.2.3 开发方法和生命周期 (Development Approach and Life Cycle)</h3>
+                            </div>
+                            
+                            <div class="border-l-4 border-green-500 pl-4 mb-4">
+                                <p class="text-gray-700 dark:text-gray-300">该绩效域关注如何选择合适的开发方法（如预测型、迭代型、增量型、敏捷型或混合型）以及如何规划和管理项目的生命周期阶段。</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">关键方面</h4>
+                                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-green-500 mt-1 mr-2"></i>
+                                        <span>根据项目特点和需求选择合适的开发方法。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-green-500 mt-1 mr-2"></i>
+                                        <span>定义项目的生命周期阶段。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-green-500 mt-1 mr-2"></i>
+                                        <span>在整个生命周期中适应和调整开发方法。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-green-500 mt-1 mr-2"></i>
+                                        <span>平衡灵活性和稳定性。</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4">
+                                <h4 class="font-semibold text-green-700 dark:text-green-400 mb-2">重要性</h4>
+                                <p class="text-gray-700 dark:text-gray-300">选择合适的开发方法和生命周期能够更好地适应项目环境，提高交付效率和质量。</p>
+                            </div>
+                        </div>
+                        
+                        <div id="section-planning" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-tasks text-yellow-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-yellow-700 dark:text-yellow-400">18.2.4 规划 (Planning)</h3>
+                            </div>
+                            
+                            <div class="border-l-4 border-yellow-500 pl-4 mb-4">
+                                <p class="text-gray-700 dark:text-gray-300">该绩效域关注项目的规划活动，包括制定项目计划、确定项目范围、定义目标和里程碑等。</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">关键方面</h4>
+                                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-yellow-500 mt-1 mr-2"></i>
+                                        <span>制定项目管理计划和子计划。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-yellow-500 mt-1 mr-2"></i>
+                                        <span>确定项目范围和目标。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-yellow-500 mt-1 mr-2"></i>
+                                        <span>制定项目进度计划和预算。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-yellow-500 mt-1 mr-2"></i>
+                                        <span>识别和分析项目风险。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-yellow-500 mt-1 mr-2"></i>
+                                        <span>规划资源需求和采购活动。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-yellow-500 mt-1 mr-2"></i>
+                                        <span>根据项目进展持续更新和调整计划。</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-4">
+                                <h4 class="font-semibold text-yellow-700 dark:text-yellow-400 mb-2">重要性</h4>
+                                <p class="text-gray-700 dark:text-gray-300">有效的规划为项目提供了明确的方向和指导，帮助团队了解要做什么、如何做以及何时做。</p>
+                            </div>
+                        </div>
+                        
+                        <div id="section-work" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-briefcase text-red-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-red-700 dark:text-red-400">18.2.5 项目工作 (Project Work)</h3>
+                            </div>
+                            
+                            <div class="border-l-4 border-red-500 pl-4 mb-4">
+                                <p class="text-gray-700 dark:text-gray-300">该绩效域关注项目工作的执行和管理，包括资源分配、工作协调、质量管理等。</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">关键方面</h4>
+                                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-red-500 mt-1 mr-2"></i>
+                                        <span>分配和管理项目资源。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-red-500 mt-1 mr-2"></i>
+                                        <span>协调项目活动和任务。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-red-500 mt-1 mr-2"></i>
+                                        <span>实施质量管理活动。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-red-500 mt-1 mr-2"></i>
+                                        <span>管理项目变更。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-red-500 mt-1 mr-2"></i>
+                                        <span>解决项目执行过程中的问题和障碍。</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-4">
+                                <h4 class="font-semibold text-red-700 dark:text-red-400 mb-2">重要性</h4>
+                                <p class="text-gray-700 dark:text-gray-300">有效的项目工作管理确保项目按计划执行，并能够及时应对变化和挑战。</p>
+                            </div>
+                        </div>
+                        
+                        <div id="section-delivery" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-truck text-indigo-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-indigo-700 dark:text-indigo-400">18.2.6 交付 (Delivery)</h3>
+                            </div>
+                            
+                            <div class="border-l-4 border-indigo-500 pl-4 mb-4">
+                                <p class="text-gray-700 dark:text-gray-300">该绩效域关注项目成果的交付，包括范围验证、成果移交、项目收尾等。</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">关键方面</h4>
+                                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-indigo-500 mt-1 mr-2"></i>
+                                        <span>验证项目成果是否符合要求。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-indigo-500 mt-1 mr-2"></i>
+                                        <span>管理成果的验收过程。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-indigo-500 mt-1 mr-2"></i>
+                                        <span>确保成果的平稳移交。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-indigo-500 mt-1 mr-2"></i>
+                                        <span>获取干系人对成果的正式验收。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-indigo-500 mt-1 mr-2"></i>
+                                        <span>完成项目收尾活动。</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4">
+                                <h4 class="font-semibold text-indigo-700 dark:text-indigo-400 mb-2">重要性</h4>
+                                <p class="text-gray-700 dark:text-gray-300">成功的交付确保项目成果满足干系人的需求和期望，并能够实现预期的业务价值。</p>
+                            </div>
+                        </div>
+                        
+                        <div id="section-measurement" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-chart-line text-pink-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-pink-700 dark:text-pink-400">18.2.7 测量 (Measurement)</h3>
+                            </div>
+                            
+                            <div class="border-l-4 border-pink-500 pl-4 mb-4">
+                                <p class="text-gray-700 dark:text-gray-300">该绩效域关注项目绩效的监控和测量，包括进度跟踪、成本控制、质量监控等。</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">关键方面</h4>
+                                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-pink-500 mt-1 mr-2"></i>
+                                        <span>建立项目绩效指标和基准。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-pink-500 mt-1 mr-2"></i>
+                                        <span>收集和分析绩效数据。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-pink-500 mt-1 mr-2"></i>
+                                        <span>监控项目进度、成本和范围。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-pink-500 mt-1 mr-2"></i>
+                                        <span>评估项目质量和风险状态。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-pink-500 mt-1 mr-2"></i>
+                                        <span>报告项目状态和预测。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-pink-500 mt-1 mr-2"></i>
+                                        <span>实施纠正措施。</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-pink-50 dark:bg-pink-900/20 rounded-lg p-4">
+                                <h4 class="font-semibold text-pink-700 dark:text-pink-400 mb-2">重要性</h4>
+                                <p class="text-gray-700 dark:text-gray-300">有效的测量使项目团队能够了解项目的健康状况，及时发现问题并采取纠正措施。</p>
+                            </div>
+                        </div>
+                        
+                        <div id="section-uncertainty" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-question-circle text-teal-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-teal-700 dark:text-teal-400">18.2.8 不确定性 (Uncertainty)</h3>
+                            </div>
+                            
+                            <div class="border-l-4 border-teal-500 pl-4 mb-4">
+                                <p class="text-gray-700 dark:text-gray-300">该绩效域关注项目中的不确定性管理，包括风险、机会、复杂性和模糊性的识别和应对。</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">关键方面</h4>
+                                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-teal-500 mt-1 mr-2"></i>
+                                        <span>识别和评估项目风险和机会。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-teal-500 mt-1 mr-2"></i>
+                                        <span>制定风险应对策略。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-teal-500 mt-1 mr-2"></i>
+                                        <span>管理项目的复杂性。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-teal-500 mt-1 mr-2"></i>
+                                        <span>应对模糊性和不确定性。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-teal-500 mt-1 mr-2"></i>
+                                        <span>建立应急计划和备用方案。</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-teal-50 dark:bg-teal-900/20 rounded-lg p-4">
+                                <h4 class="font-semibold text-teal-700 dark:text-teal-400 mb-2">重要性</h4>
+                                <p class="text-gray-700 dark:text-gray-300">有效的不确定性管理帮助项目团队预见潜在问题，减轻负面影响，并利用积极机会。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="section-interaction" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">18.3 项目绩效域之间的相互作用</h2>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">项目绩效域不是孤立的，它们之间存在复杂的相互作用和依赖关系。一个绩效域的决策和活动可能会影响其他绩效域。</p>
+                            
+                            <div class="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-lg p-5 shadow-md mb-6">
+                                <h3 class="text-xl font-semibold mb-3 text-indigo-600 dark:text-indigo-400">绩效域相互作用示例</h3>
+                                <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mr-3 mt-1">
+                                            <span class="text-blue-600 dark:text-blue-400 font-semibold text-sm">1</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium">干系人与团队：</span>干系人的需求和期望会影响团队的组成和工作方式，而团队的表现也会影响干系人的满意度。
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center mr-3 mt-1">
+                                            <span class="text-purple-600 dark:text-purple-400 font-semibold text-sm">2</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium">开发方法与规划：</span>选择的开发方法会直接影响项目的规划方式，例如，敏捷方法与预测型方法的规划活动有很大不同。
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center mr-3 mt-1">
+                                            <span class="text-green-600 dark:text-green-400 font-semibold text-sm">3</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium">测量与不确定性：</span>测量活动可以帮助识别和量化不确定性，而不确定性管理也会影响需要测量的指标。
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-yellow-100 dark:bg-yellow-900 flex items-center justify-center mr-3 mt-1">
+                                            <span class="text-yellow-600 dark:text-yellow-400 font-semibold text-sm">4</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium">项目工作与交付：</span>项目工作的质量和效率直接影响交付成果的质量和及时性。
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex flex-col md:flex-row items-center justify-center bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
+                                <div class="md:w-1/2 mb-4 md:mb-0 md:mr-6">
+                                    <h3 class="text-xl font-semibold mb-3 text-indigo-600 dark:text-indigo-400 text-center">整体视角的重要性</h3>
+                                    <p class="text-gray-700 dark:text-gray-300">项目经理需要采取整体视角，理解各个绩效域之间的相互作用，并在决策时考虑这些相互作用的影响。这种整体方法有助于：</p>
+                                    <ul class="mt-3 space-y-2 text-gray-700 dark:text-gray-300">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                            <span>更好地平衡项目约束</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                            <span>做出更全面的决策</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                            <span>提高项目成功的可能性</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="md:w-1/2">
+                                    <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4">
+                                        <h4 class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2 text-center">系统思维</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-center italic">"项目是一个系统，其中各个部分相互连接和相互依赖。改变一个部分可能会对整个系统产生连锁反应。"</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="section-summary" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">18.4 总结</h2>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">项目绩效域提供了一个全面的框架，帮助项目经理和团队关注项目成功的关键领域。通过有效管理这些绩效域，项目团队可以提高项目成功的可能性，实现预期的业务价值。</p>
+                            
+                            <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-5 shadow-md mb-6">
+                                <h3 class="text-xl font-semibold mb-3 text-indigo-600 dark:text-indigo-400">关键要点</h3>
+                                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-star text-yellow-500 mt-1 mr-2"></i>
+                                        <span>项目绩效域是相互关联的，需要整体考虑。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-star text-yellow-500 mt-1 mr-2"></i>
+                                        <span>每个绩效域都对项目成功至关重要。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-star text-yellow-500 mt-1 mr-2"></i>
+                                        <span>项目经理需要根据项目特点和环境，平衡各个绩效域的关注度。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-star text-yellow-500 mt-1 mr-2"></i>
+                                        <span>绩效域的管理应该是动态的，随着项目的进展而调整。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-star text-yellow-500 mt-1 mr-2"></i>
+                                        <span>有效的绩效域管理需要项目团队的共同努力。</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg p-5 shadow-md">
+                                <div class="flex items-center mb-3">
+                                    <i class="fas fa-quote-left text-indigo-500 mr-2 text-xl"></i>
+                                    <h3 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400">结语</h3>
+                                </div>
+                                <p class="text-gray-700 dark:text-gray-300 italic">项目绩效域为项目管理提供了一个全面的框架，帮助项目团队关注项目成功的关键因素。通过有效管理这些绩效域，项目经理可以提高项目成功的可能性，实现组织的战略目标和业务价值。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center mt-12 mb-8">
+                    <a href="17Project Stakeholder Management.html" class="flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        上一章：干系人管理
+                    </a>
+                    <a href="19Configuration and Change Management.html" class="flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                        下一章：配置与变更管理
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- 页脚 -->
+    <footer class="bg-white dark:bg-gray-800 text-gray-800 dark:text-white py-8 mt-12">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <h3 class="text-xl font-bold">项目管理知识体系</h3>
+                <p class="text-gray-600 dark:text-gray-400 mt-2">资源管理是项目成功的关键因素</p>
+            </div>
+            <div>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">首页</a></li>
+                    <li><a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">知识领域</a></li>
+                    <li><a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">过程组</a></li>
+                    <li><a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-300 dark:border-gray-700 mt-8 pt-8 text-center text-gray-600 dark:text-gray-400">
+            <p>&copy; 2023 项目管理知识体系 | 保留所有权利</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        // 暗黑模式切换
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const htmlElement = document.documentElement;
+        
+        // 检查本地存储中的暗黑模式设置
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            htmlElement.classList.add('dark');
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            
+            // 保存设置到本地存储
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+        
+        // 移动端菜单切换
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 侧边栏激活状态
+        const sidebarItems = document.querySelectorAll('.sidebar-item');
+        const sections = document.querySelectorAll('[id^="section-"]');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            sidebarItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

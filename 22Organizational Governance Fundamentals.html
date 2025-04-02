@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第22章 组织通用治理基础 | 项目管理知识体系</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        .sidebar-item.active {
+            border-left: 4px solid #6366F1;
+            background-color: rgba(99, 102, 241, 0.1);
+        }
+        .dark .sidebar-item.active {
+            background-color: rgba(99, 102, 241, 0.2);
+        }
+        .transition-colors {
+            transition-property: background-color, border-color, color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white">
+    <!-- 导航栏 -->
+    <nav class="bg-white dark:bg-gray-800 shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold text-indigo-600 dark:text-indigo-400">项目管理知识体系</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">首页</a>
+                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">知识领域</a>
+                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">过程组</a>
+                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">工具与技术</a>
+                    <button id="dark-mode-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-300"></i>
+                    </button>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 dark:text-gray-300 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- 移动端菜单 -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="index.html" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">首页</a>
+                <a href="#" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">知识领域</a>
+                <a href="#" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">过程组</a>
+                <a href="#" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">工具与技术</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex flex-col md:flex-row">
+            <!-- 侧边栏 -->
+            <div class="md:w-1/4 mb-6 md:mb-0 md:pr-6">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 sticky top-4">
+                    <h2 class="text-xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">第22章 组织通用治理基础</h2>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#section-22-1" class="sidebar-item block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                22.1 组织战略
+                            </a>
+                            <ul class="pl-4 mt-2 space-y-1">
+                                <li>
+                                    <a href="#section-22-1-1" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        22.1.1 组织战略的概念和重要性
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section-22-1-2" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        22.1.2 组织战略的构成要素
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section-22-1-3" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        22.1.3 组织战略的制定过程
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section-22-1-4" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        22.1.4 组织战略与项目管理的关系
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#section-22-2" class="sidebar-item block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                22.2 绩效考核
+                            </a>
+                            <ul class="pl-4 mt-2 space-y-1">
+                                <li>
+                                    <a href="#section-22-2-1" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        22.2.1 绩效考核的概念和目的
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section-22-2-2" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        22.2.2 绩效考核的原则
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section-22-2-3" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        22.2.3 绩效考核的方法
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section-22-2-4" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        22.2.4 绩效考核在项目管理中的应用
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#section-22-3" class="sidebar-item block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                22.3 转型升级
+                            </a>
+                            <ul class="pl-4 mt-2 space-y-1">
+                                <li>
+                                    <a href="#section-22-3-1" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        22.3.1 转型升级的概念和动因
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section-22-3-2" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        22.3.2 转型升级的类型
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section-22-3-3" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        22.3.3 转型升级的关键步骤
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section-22-3-4" class="sidebar-item block px-3 py-1 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        22.3.4 转型升级与项目管理的关系
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 内容区域 -->
+            <div class="md:w-3/4">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <div class="mb-8">
+                        <h1 class="text-4xl font-bold mb-4 text-indigo-700 dark:text-indigo-400">第22章 组织通用治理基础</h1>
+                        <p class="text-gray-600 dark:text-gray-400 text-lg">Organizational Governance Fundamentals</p>
+                    </div>
+                    
+                    <!-- 22.1 组织战略 -->
+                    <div id="section-22-1" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">22.1 组织战略</h2>
+                        
+                        <!-- 22.1.1 组织战略的概念和重要性 -->
+                        <div id="section-22-1-1" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-bullseye text-blue-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-blue-700 dark:text-blue-400">22.1.1 组织战略的概念和重要性</h3>
+                            </div>
+                            
+                            <div class="border-l-4 border-blue-500 pl-4 mb-4">
+                                <p class="text-gray-700 dark:text-gray-300">组织战略是指在充分分析组织内外部环境的基础上，为实现组织长期目标而制定的总体性和方向性的规划和部署。它回答了"组织要往哪里去"、"如何去"等核心问题。</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 italic">注释：强调长期性、总体性和方向性。</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">重要性</h4>
+                                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1 mr-2"></i>
+                                        <span><strong>指引方向：</strong> 为组织的所有活动提供明确的方向和目标。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1 mr-2"></i>
+                                        <span><strong>资源配置：</strong> 指导组织资源的有效分配和利用。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1 mr-2"></i>
+                                        <span><strong>竞争优势：</strong> 帮助组织在激烈的市场竞争中建立和保持优势。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1 mr-2"></i>
+                                        <span><strong>决策依据：</strong> 为组织的重要决策提供基本框架和原则。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1 mr-2"></i>
+                                        <span><strong>凝聚力量：</strong> 统一组织成员的思想和行动，形成合力。</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- 22.1.2 组织战略的构成要素 -->
+                        <div id="section-22-1-2" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-puzzle-piece text-green-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-green-700 dark:text-green-400">22.1.2 组织战略的构成要素</h3>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-green-700 dark:text-green-400 mb-2">愿景 (Vision)</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">组织对未来发展的一种理想化、鼓舞人心的描绘，回答"我们希望成为什么"。</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">注释：具有前瞻性和激励性。</p>
+                                </div>
+                                
+                                <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-green-700 dark:text-green-400 mb-2">使命 (Mission)</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">组织存在的根本目的和理由，回答"我们是做什么的"。</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">注释：明确组织的业务范围和核心价值。</p>
+                                </div>
+                                
+                                <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-green-700 dark:text-green-400 mb-2">目标 (Goals)</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">组织在一定时期内要达成的具体成果，通常是可衡量、可实现、有时限的 (SMART原则)。</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">注释：将愿景和使命转化为具体的行动计划。</p>
+                                </div>
+                                
+                                <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-green-700 dark:text-green-400 mb-2">战略举措 (Strategies)</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">为实现组织目标而采取的重大行动和方法，回答"我们如何实现目标"。</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">注释：是实现目标的具体路径和手段。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 22.1.3 组织战略的制定过程 -->
+                        <div id="section-22-1-3" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-cogs text-purple-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-purple-700 dark:text-purple-400">22.1.3 组织战略的制定过程</h3>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="flex">
+                                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
+                                        <span class="text-purple-600 dark:text-purple-300 font-bold">1</span>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200">环境分析</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">对组织外部环境（宏观环境、行业环境、竞争对手等）和内部环境（资源、能力、优势、劣势等）进行全面分析。常用的工具有SWOT分析、PEST分析等。</p>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">注释：了解组织所处的内外部环境是制定有效战略的基础。</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex">
+                                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
+                                        <span class="text-purple-600 dark:text-purple-300 font-bold">2</span>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200">战略方向选择</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">基于环境分析结果，确定组织的发展方向和战略重点。</p>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">注释：例如，市场扩张、产品创新、成本领先等。</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex">
+                                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
+                                        <span class="text-purple-600 dark:text-purple-300 font-bold">3</span>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200">战略目标制定</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">设定清晰、可衡量的战略目标。</p>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">注释：将战略方向具体化。</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex">
+                                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
+                                        <span class="text-purple-600 dark:text-purple-300 font-bold">4</span>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200">战略规划</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">制定实现战略目标的具体行动计划和资源分配方案。</p>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">注释：将战略目标转化为可执行的步骤。</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex">
+                                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
+                                        <span class="text-purple-600 dark:text-purple-300 font-bold">5</span>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200">战略实施</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">将战略规划付诸实践，落实各项战略举措。</p>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">注释：是战略成功的关键环节。</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex">
+                                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
+                                        <span class="text-purple-600 dark:text-purple-300 font-bold">6</span>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200">战略评估与控制</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">对战略的实施效果进行评估，并根据环境变化进行调整和控制。</p>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">注释：确保战略的有效性和适应性。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 22.1.4 组织战略与项目管理的关系 -->
+                        <div id="section-22-1-4" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-link text-indigo-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-indigo-700 dark:text-indigo-400">22.1.4 组织战略与项目管理的关系</h3>
+                            </div>
+                            
+                            <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-5 shadow-md">
+                                <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                                        <span>组织战略是项目管理的方向和驱动力。项目应服务于组织战略，为战略目标的实现做出贡献。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                                        <span>项目组合管理是连接组织战略和项目执行的关键环节，通过对项目的选择、优先级排序和资源分配，确保项目组合与组织战略高度一致。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                                        <span>项目的成功交付是组织战略得以实现的重要保障。</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mt-4 flex justify-center">
+                                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-4 max-w-md">
+                                    <div class="flex justify-center mb-3">
+                                        <i class="fas fa-lightbulb text-yellow-500 text-2xl"></i>
+                                    </div>
+                                    <p class="text-center text-gray-700 dark:text-gray-300 italic">
+                                        "项目是实现组织战略的载体，项目管理是确保战略落地的关键手段。"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 22.2 绩效考核 -->
+                    <div id="section-22-2" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">22.2 绩效考核</h2>
+                        
+                        <!-- 22.2.1 绩效考核的概念和目的 -->
+                        <div id="section-22-2-1" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-chart-line text-red-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-red-700 dark:text-red-400">22.2.1 绩效考核的概念和目的</h3>
+                            </div>
+                            
+                            <div class="border-l-4 border-red-500 pl-4 mb-4">
+                                <p class="text-gray-700 dark:text-gray-300">绩效考核是指组织通过一定的标准和方法，对员工或团队在特定时期内的工作表现、成果和能力进行系统评价的过程。</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 italic">注释：是组织管理的重要环节，也是人力资源管理的核心功能之一。</p>
+                            </div>
+                            
+                            <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-5 mt-4">
+                                <h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">绩效考核的目的</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-white dark:bg-gray-700 p-3 rounded-lg shadow-sm">
+                                        <h5 class="font-medium text-red-700 dark:text-red-400 mb-2">评价与反馈</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">客观评价员工的工作表现，提供及时反馈，帮助员工了解自己的优势和不足。</p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-3 rounded-lg shadow-sm">
+                                        <h5 class="font-medium text-red-700 dark:text-red-400 mb-2">激励与发展</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">激励员工提高工作绩效，促进员工能力和职业发展。</p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-3 rounded-lg shadow-sm">
+                                        <h5 class="font-medium text-red-700 dark:text-red-400 mb-2">薪酬与晋升</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">为薪酬调整、奖金分配、晋升决策等提供客观依据。</p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-700 p-3 rounded-lg shadow-sm">
+                                        <h5 class="font-medium text-red-700 dark:text-red-400 mb-2">组织效能</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">提高组织整体绩效和效率，促进组织目标的实现。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 22.2.2 绩效考核的原则 -->
+                        <div id="section-22-2-2" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-balance-scale text-orange-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-orange-700 dark:text-orange-400">22.2.2 绩效考核的原则</h3>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/30">
+                                        <i class="fas fa-bullseye text-orange-500"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200">目标导向原则</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">绩效考核应以组织战略和目标为导向，确保个人目标与组织目标一致。</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/30">
+                                        <i class="fas fa-gavel text-orange-500"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200">公平公正原则</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">考核标准和过程应公平、公正、公开，避免主观偏见和不公平待遇。</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/30">
+                                        <i class="fas fa-chart-bar text-orange-500"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200">量化与定性相结合原则</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">既要注重可量化的绩效指标，也要考虑难以量化的行为和能力因素。</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/30">
+                                        <i class="fas fa-users text-orange-500"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200">全员参与原则</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">考核过程应让被考核者积极参与，包括目标设定、过程沟通和结果反馈等环节。</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/30">
+                                        <i class="fas fa-sync-alt text-orange-500"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200">持续改进原则</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">考核不仅是对过去工作的评价，更应注重未来的改进和发展。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 22.2.3 绩效考核的方法 -->
+                        <div id="section-22-2-3" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-tools text-blue-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-blue-700 dark:text-blue-400">22.2.3 绩效考核的方法</h3>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-blue-700 dark:text-blue-400 mb-2">目标管理法 (MBO)</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">通过上下级共同制定目标，定期检查目标完成情况，最终根据目标达成度评价绩效。</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">优点：目标明确，结果导向；缺点：可能忽视过程和方法。</p>
+                                </div>
+                                
+                                <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-blue-700 dark:text-blue-400 mb-2">关键绩效指标法 (KPI)</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">设定关键绩效指标，通过指标完成情况评价绩效。</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">优点：量化明确，易于考核；缺点：可能导致短视行为。</p>
+                                </div>
+                                
+                                <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-blue-700 dark:text-blue-400 mb-2">360度反馈法</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">收集来自上级、同事、下级、客户等多方面的评价，形成全方位的绩效评价。</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">优点：全面客观；缺点：实施复杂，成本较高。</p>
+                                </div>
+                                
+                                <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-blue-700 dark:text-blue-400 mb-2">平衡计分卡 (BSC)</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">从财务、客户、内部流程、学习与成长四个维度评价绩效。</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">优点：全面均衡；缺点：设计和实施难度大。</p>
+                                </div>
+                                
+                                <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-blue-700 dark:text-blue-400 mb-2">行为锚定等级评价法 (BARS)</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">将工作行为与绩效等级相关联，通过评价具体行为来评价绩效。</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">优点：具体明确；缺点：开发成本高。</p>
+                                </div>
+                                
+                                <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-blue-700 dark:text-blue-400 mb-2">关键事件法</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">记录员工工作中的关键事件（特别好或特别差的表现），作为绩效评价的依据。</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">优点：基于事实；缺点：可能存在选择性记忆。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 22.2.4 绩效考核在项目管理中的应用 -->
+                        <div id="section-22-2-4" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-tasks text-green-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-green-700 dark:text-green-400">22.2.4 绩效考核在项目管理中的应用</h3>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-green-700 dark:text-green-400 mb-2">项目绩效评估</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">通过评估项目的进度、成本、质量、范围等方面的表现，判断项目的整体绩效。常用工具包括挣值管理、关键绩效指标等。</p>
+                                </div>
+                                
+                                <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-green-700 dark:text-green-400 mb-2">项目团队成员绩效评估</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">评估项目团队成员的工作表现、贡献和能力，为团队管理、激励和发展提供依据。</p>
+                                </div>
+                                
+                                <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-green-700 dark:text-green-400 mb-2">项目经理绩效评估</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">评估项目经理在项目规划、执行、监控和收尾等方面的能力和表现，以及对项目目标实现的贡献。</p>
+                                </div>
+                                
+                                <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-green-700 dark:text-green-400 mb-2">项目组合绩效评估</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">评估项目组合的整体表现，包括战略一致性、资源利用效率、风险管理等方面，为组织的项目投资决策提供依据。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    在项目管理中，绩效考核不仅是对过去工作的评价，更是持续改进的工具。通过有效的绩效考核，可以及时发现项目中的问题和风险，采取纠正措施，确保项目成功。同时，绩效考核也是项目经验教训积累和组织学习的重要手段。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 22.3 转型升级 -->
+                    <div id="section-22-3" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">22.3 转型升级</h2>
+                        
+                        <!-- 22.3.1 转型升级的概念和动因 -->
+                        <div id="section-22-3-1" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-exchange-alt text-purple-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-purple-700 dark:text-purple-400">22.3.1 转型升级的概念和动因</h3>
+                            </div>
+                            
+                            <div class="border-l-4 border-purple-500 pl-4 mb-4">
+                                <p class="text-gray-700 dark:text-gray-300">转型升级是指组织为适应内外部环境变化，主动调整业务模式、组织结构、管理方式等，实现质的飞跃和可持续发展的过程。</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 italic">注释：是组织应对变化、保持竞争力的必然选择。</p>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">转型升级的主要动因</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+                                        <h5 class="font-medium text-purple-700 dark:text-purple-400 mb-2">外部动因</h5>
+                                        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                            <li class="flex items-start">
+                                                <i class="fas fa-angle-right text-purple-500 mt-1 mr-2"></i>
+                                                <span>市场需求变化</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-angle-right text-purple-500 mt-1 mr-2"></i>
+                                                <span>技术革新与数字化浪潮</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-angle-right text-purple-500 mt-1 mr-2"></i>
+                                                <span>竞争格局变化</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-angle-right text-purple-500 mt-1 mr-2"></i>
+                                                <span>政策法规调整</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-angle-right text-purple-500 mt-1 mr-2"></i>
+                                                <span>全球化与区域一体化</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+                                        <h5 class="font-medium text-purple-700 dark:text-purple-400 mb-2">内部动因</h5>
+                                        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                            <li class="flex items-start">
+                                                <i class="fas fa-angle-right text-purple-500 mt-1 mr-2"></i>
+                                                <span>业务增长瓶颈</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-angle-right text-purple-500 mt-1 mr-2"></i>
+                                                <span>效率与成本压力</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-angle-right text-purple-500 mt-1 mr-2"></i>
+                                                <span>组织能力不足</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-angle-right text-purple-500 mt-1 mr-2"></i>
+                                                <span>战略调整需要</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-angle-right text-purple-500 mt-1 mr-2"></i>
+                                                <span>领导层更替与理念变化</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 22.3.2 转型升级的类型 -->
+                        <div id="section-22-3-2" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-sitemap text-indigo-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-indigo-700 dark:text-indigo-400">22.3.2 转型升级的类型</h3>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-indigo-700 dark:text-indigo-400 mb-2">业务转型</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">调整业务结构、产品线或服务内容，进入新的市场领域或退出低效业务。</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">例如：传统零售企业向电子商务转型，制造企业向服务型制造转型。</p>
+                                </div>
+                                
+                                <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-indigo-700 dark:text-indigo-400 mb-2">技术转型</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">采用新技术、新工艺，提升技术水平和创新能力。</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">例如：企业数字化转型，传统制造向智能制造升级。</p>
+                                </div>
+                                
+                                <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-indigo-700 dark:text-indigo-400 mb-2">组织转型</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">调整组织结构、管理模式和运营机制，提高组织效率和灵活性。</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">例如：从职能型组织向矩阵型或项目型组织转变，扁平化管理改革。</p>
+                                </div>
+                                
+                                <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-indigo-700 dark:text-indigo-400 mb-2">文化转型</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">改变组织文化、价值观和行为方式，塑造新的组织氛围和精神。</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">例如：从保守封闭向开放创新转变，从层级文化向团队文化转变。</p>
+                                </div>
+                                
+                                <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-indigo-700 dark:text-indigo-400 mb-2">管理转型</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">更新管理理念、方法和工具，提升管理水平和效能。</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 italic">例如：从传统管理向精益管理、敏捷管理转变。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 22.3.3 转型升级的关键步骤 -->
+                        <div id="section-22-3-3" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-map-signs text-yellow-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-yellow-700 dark:text-yellow-400">22.3.3 转型升级的关键步骤</h3>
+                            </div>
+                            
+                            <div class="relative">
+                                <div class="absolute left-5 inset-y-0 w-0.5 bg-yellow-300 dark:bg-yellow-700"></div>
+                                
+                                <div class="relative pl-10 pb-8">
+                                    <div class="absolute left-3 top-5 w-4 h-4 rounded-full bg-yellow-500"></div>
+                                    <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">转型诊断与评估</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">分析组织内外部环境，识别转型需求和挑战，评估组织的转型能力和准备度。</p>
+                                </div>
+                                
+                                <div class="relative pl-10 pb-8">
+                                    <div class="absolute left-3 top-5 w-4 h-4 rounded-full bg-yellow-500"></div>
+                                    <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">转型战略制定</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">明确转型的愿景、目标和路径，制定详细的转型规划和实施方案。</p>
+                                </div>
+                                
+                                <div class="relative pl-10 pb-8">
+                                    <div class="absolute left-3 top-5 w-4 h-4 rounded-full bg-yellow-500"></div>
+                                    <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">转型战略制定</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">明确转型的愿景、目标和路径，制定详细的转型规划和实施方案。</p>
+                                </div>
+                                
+                                <div class="relative pl-10 pb-8">
+                                    <div class="absolute left-3 top-5 w-4 h-4 rounded-full bg-yellow-500"></div>
+                                    <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">组织准备与动员</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">建立转型领导团队，进行组织动员和沟通，培养转型意识和氛围，降低变革阻力。</p>
+                                </div>
+                                
+                                <div class="relative pl-10 pb-8">
+                                    <div class="absolute left-3 top-5 w-4 h-4 rounded-full bg-yellow-500"></div>
+                                    <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">能力建设与资源配置</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">培养和引进转型所需的关键能力，配置必要的资源和工具，为转型提供支持。</p>
+                                </div>
+                                
+                                <div class="relative pl-10 pb-8">
+                                    <div class="absolute left-3 top-5 w-4 h-4 rounded-full bg-yellow-500"></div>
+                                    <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">转型实施与推进</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">按照规划有序推进转型举措，解决实施过程中的问题和挑战，确保转型进度和质量。</p>
+                                </div>
+                                
+                                <div class="relative pl-10 pb-8">
+                                    <div class="absolute left-3 top-5 w-4 h-4 rounded-full bg-yellow-500"></div>
+                                    <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">评估与调整</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">定期评估转型效果，根据反馈和环境变化及时调整转型策略和措施，确保转型目标的实现。</p>
+                                </div>
+                                
+                                <div class="relative pl-10">
+                                    <div class="absolute left-3 top-5 w-4 h-4 rounded-full bg-yellow-500"></div>
+                                    <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">巩固与持续改进</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">巩固转型成果，将新的理念、方法和实践融入组织日常运营，形成持续改进的机制。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 22.3.4 转型升级中的项目管理应用 -->
+                        <div id="section-22-3-4" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-project-diagram text-red-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-red-700 dark:text-red-400">22.3.4 转型升级中的项目管理应用</h3>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-red-700 dark:text-red-400 mb-2">转型项目组合管理</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">将转型升级拆分为多个相互关联的项目，形成项目组合，统一规划和管理，确保资源的合理分配和项目间的协同。</p>
+                                </div>
+                                
+                                <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-red-700 dark:text-red-400 mb-2">转型项目管理办公室 (PMO)</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">建立专门的转型项目管理办公室，负责转型项目的标准制定、进度监控、风险管理、资源协调和沟通支持等。</p>
+                                </div>
+                                
+                                <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-red-700 dark:text-red-400 mb-2">敏捷方法在转型中的应用</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">采用敏捷项目管理方法，通过迭代式、增量式的方式推进转型，快速响应变化，降低风险，提高转型的适应性和成功率。</p>
+                                </div>
+                                
+                                <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-red-700 dark:text-red-400 mb-2">变革管理与项目管理的结合</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">将变革管理与项目管理相结合，既关注转型项目的技术实施，也重视人员、文化和组织方面的变革管理，全面推进转型。</p>
+                                </div>
+                                
+                                <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-red-700 dark:text-red-400 mb-2">转型项目的绩效评估</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">建立转型项目的绩效评估体系，定期评估转型项目的进展和成效，为决策提供依据。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    项目管理为组织转型升级提供了系统化、规范化的方法和工具，帮助组织有效管理转型过程中的复杂性、不确定性和风险，提高转型的成功率。同时，转型升级也为项目管理提供了广阔的应用场景和发展机会。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 22.4 风险管理 -->
+                    <div id="section-22-4" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">22.4 风险管理</h2>
+                        
+                        <!-- 22.4.1 风险管理的概念和重要性 -->
+                        <div id="section-22-4-1" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-shield-alt text-blue-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-blue-700 dark:text-blue-400">22.4.1 风险管理的概念和重要性</h3>
+                            </div>
+                            
+                            <div class="border-l-4 border-blue-500 pl-4 mb-4">
+                                <p class="text-gray-700 dark:text-gray-300">风险管理是指组织通过识别、分析、评估和应对各种风险，以降低风险带来的负面影响，把握风险中的机会，实现组织目标的过程。</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 italic">注释：是组织管理的重要组成部分，贯穿于组织运营的各个环节。</p>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">风险管理的重要性</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                                        <h5 class="font-medium text-blue-700 dark:text-blue-400 mb-2">降低不确定性</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">通过系统化的风险管理，减少组织面临的不确定性，提高决策和行动的可预见性。</p>
+                                    </div>
+                                    
+                                    <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                                        <h5 class="font-medium text-blue-700 dark:text-blue-400 mb-2">保障目标实现</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">识别和应对可能影响目标实现的风险因素，增加目标实现的可能性。</p>
+                                    </div>
+                                    
+                                    <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                                        <h5 class="font-medium text-blue-700 dark:text-blue-400 mb-2">提高资源利用效率</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">通过风险评估和优先级排序，合理分配资源，避免资源浪费。</p>
+                                    </div>
+                                    
+                                    <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                                        <h5 class="font-medium text-blue-700 dark:text-blue-400 mb-2">增强应对能力</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">提高组织应对各种风险和危机的能力，增强组织韧性。</p>
+                                    </div>
+                                    
+                                    <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                                        <h5 class="font-medium text-blue-700 dark:text-blue-400 mb-2">创造竞争优势</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">有效的风险管理可以成为组织的竞争优势，帮助组织在不确定环境中把握机会。</p>
+                                    </div>
+                                    
+                                    <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                                        <h5 class="font-medium text-blue-700 dark:text-blue-400 mb-2">满足合规要求</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">满足监管机构、投资者和其他利益相关者对风险管理的要求和期望。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 22.4.2 风险管理的流程 -->
+                        <div id="section-22-4-2" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-sync-alt text-green-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-green-700 dark:text-green-400">22.4.2 风险管理的流程</h3>
+                            </div>
+                            
+                            <div class="relative">
+                                <div class="absolute left-5 inset-y-0 w-0.5 bg-green-300 dark:bg-green-700"></div>
+                                
+                                <div class="relative pl-10 pb-8">
+                                    <div class="absolute left-3 top-5 w-4 h-4 rounded-full bg-green-500"></div>
+                                    <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">风险管理规划</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">确定风险管理的目标、范围、方法和工具，制定风险管理计划。</p>
+                                </div>
+                                
+                                <div class="relative pl-10 pb-8">
+                                    <div class="absolute left-3 top-5 w-4 h-4 rounded-full bg-green-500"></div>
+                                    <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">风险识别</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">识别可能影响组织目标实现的各种风险因素，建立风险清单。常用方法包括头脑风暴、德尔菲法、SWOT分析、核对表等。</p>
+                                </div>
+                                
+                                <div class="relative pl-10 pb-8">
+                                    <div class="absolute left-3 top-5 w-4 h-4 rounded-full bg-green-500"></div>
+                                    <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">风险分析</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">分析风险的性质、来源、影响范围和机制，评估风险发生的可能性和影响程度。可采用定性分析（如风险矩阵）和定量分析（如蒙特卡洛模拟）等方法。</p>
+                                </div>
+                                
+                                <div class="relative pl-10 pb-8">
+                                    <div class="absolute left-3 top-5 w-4 h-4 rounded-full bg-green-500"></div>
+                                    <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">风险评估</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">根据风险分析结果，评估风险的严重程度，确定风险优先级，识别需要重点关注和应对的风险。</p>
+                                </div>
+                                
+                                <div class="relative pl-10 pb-8">
+                                    <div class="absolute left-3 top-5 w-4 h-4 rounded-full bg-green-500"></div>
+                                    <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">风险应对</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">制定和实施风险应对策略和措施，包括规避风险、转移风险、减轻风险和接受风险等。</p>
+                                </div>
+                                
+                                <div class="relative pl-10 pb-8">
+                                    <div class="absolute left-3 top-5 w-4 h-4 rounded-full bg-green-500"></div>
+                                    <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">风险监控</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">持续监控风险状态和风险应对措施的实施效果，识别新的风险，更新风险评估。</p>
+                                </div>
+                                
+                                <div class="relative pl-10">
+                                    <div class="absolute left-3 top-5 w-4 h-4 rounded-full bg-green-500"></div>
+                                    <h5 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">风险沟通与报告</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">与相关利益方进行风险信息的沟通和交流，定期报告风险管理情况。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 22.4.3 风险管理的方法和工具 -->
+                        <div id="section-22-4-3" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-tools text-purple-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-purple-700 dark:text-purple-400">22.4.3 风险管理的方法和工具</h3>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-purple-700 dark:text-purple-400 mb-2">风险矩阵</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">通过可能性和影响程度两个维度，将风险分为高、中、低不同等级，直观展示风险优先级。</p>
+                                </div>
+                                
+                                <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-purple-700 dark:text-purple-400 mb-2">风险分解结构 (RBS)</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">将风险按照类别和来源进行层次化分解，形成风险分解结构，便于系统化管理风险。</p>
+                                </div>
+                                
+                                <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-purple-700 dark:text-purple-400 mb-2">故障模式与影响分析 (FMEA)</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">识别系统、设计、流程或服务中可能的故障模式，分析其原因和影响，评估风险优先数 (RPN)。</p>
+                                </div>
+                                
+                                <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-purple-700 dark:text-purple-400 mb-2">决策树分析</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">通过树状图形展示决策过程中的各种可能选择和结果，帮助评估不同决策方案的风险和收益。</p>
+                                </div>
+                                
+                                <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-purple-700 dark:text-purple-400 mb-2">蒙特卡洛模拟</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">通过大量随机模拟，分析不确定因素对项目目标的影响，得出风险的概率分布。</p>
+                                </div>
+                                
+                                <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-purple-700 dark:text-purple-400 mb-2">风险登记册</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">记录和跟踪已识别风险的详细信息，包括风险描述、可能性、影响、应对措施、责任人等。</p>
+                                </div>
+                                
+                                <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-purple-700 dark:text-purple-400 mb-2">敏感性分析</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">分析特定变量变化对项目结果的影响程度，识别对结果最敏感的风险因素。</p>
+                                </div>
+                                
+                                <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-purple-700 dark:text-purple-400 mb-2">情景分析</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">构建不同的未来情景，分析在各种情景下的风险和应对策略，提高组织的适应性。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 22.4.4 风险管理在项目管理中的应用 -->
+                        <div id="section-22-4-4" class="scroll-mt-20 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-clipboard-check text-indigo-500 text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold text-indigo-700 dark:text-indigo-400">22.4.4 风险管理在项目管理中的应用</h3>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-indigo-700 dark:text-indigo-400 mb-2">项目风险管理计划</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">在项目规划阶段，制定项目风险管理计划，明确风险管理的方法、工具、角色和责任。</p>
+                                </div>
+                                
+                                <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-indigo-700 dark:text-indigo-400 mb-2">项目风险识别</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">识别可能影响项目目标（进度、成本、质量、范围等）的各种风险因素，建立项目风险清单。</p>
+                                </div>
+                                
+                                <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-indigo-700 dark:text-indigo-400 mb-2">项目风险分析与评估</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">分析项目风险的可能性和影响，评估风险等级，确定需要重点关注的风险。</p>
+                                </div>
+                                
+                                <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-indigo-700 dark:text-indigo-400 mb-2">项目风险应对</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">制定和实施项目风险应对策略，包括规避、转移、减轻和接受等，将风险应对措施纳入项目计划。</p>
+                                </div>
+                                
+                                <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-indigo-700 dark:text-indigo-400 mb-2">项目风险监控</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">在项目执行过程中，持续监控已识别风险的状态变化，识别新的风险，评估风险应对措施的有效性。</p>
+                                </div>
+                                
+                                <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4">
+                                    <h5 class="font-medium text-indigo-700 dark:text-indigo-400 mb-2">项目风险沟通</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">与项目相关方进行风险信息的沟通和交流，确保所有相关方了解项目风险状况和应对措施。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    有效的项目风险管理可以提高项目成功的可能性，减少项目延期、成本超支和质量问题的发生。项目经理应将风险管理作为项目管理的核心工作之一，贯穿于项目的全生命周期。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 22.5 本章小结 -->
+                    <div id="section-22-5" class="scroll-mt-20 mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">22.5 本章小结</h2>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                            <div class="space-y-4">
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    本章介绍了组织通用治理的四个重要方面：组织战略、绩效考核、转型升级和风险管理，以及它们与项目管理的关系。
+                                </p>
+                                
+                                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                                    <h5 class="font-medium text-gray-800 dark:text-gray-200 mb-2">组织战略</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">
+                                        组织战略为项目管理提供方向和目标，项目是实现组织战略的重要载体。有效的项目管理能够确保战略目标的落地实施。
+                                    </p>
+                                </div>
+                                
+                                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                                    <h5 class="font-medium text-gray-800 dark:text-gray-200 mb-2">绩效考核</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">
+                                        绩效考核是评价组织、团队和个人工作表现的重要手段。在项目管理中，绩效考核可以帮助评估项目进展、团队表现和项目成果，为项目决策和改进提供依据。
+                                    </p>
+                                </div>
+                                
+                                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                                    <h5 class="font-medium text-gray-800 dark:text-gray-200 mb-2">转型升级</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">
+                                        转型升级是组织应对环境变化、保持竞争力的必然选择。项目管理为组织转型升级提供了系统化、规范化的方法和工具，帮助组织有效管理转型过程中的复杂性和风险。
+                                    </p>
+                                </div>
+                                
+                                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                                    <h5 class="font-medium text-gray-800 dark:text-gray-200 mb-2">风险管理</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">
+                                        风险管理是组织管理的重要组成部分，贯穿于组织运营的各个环节。在项目管理中，有效的风险管理可以提高项目成功的可能性，减少项目延期、成本超支和质量问题的发生。
+                                    </p>
+                                </div>
+                                
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    组织通用治理与项目管理密切相关，相互促进。一方面，组织通用治理为项目管理提供了环境和支持；另一方面，项目管理也是实现组织治理目标的重要手段。项目经理需要了解组织通用治理的基本知识，将项目管理与组织治理有机结合，提高项目成功率，为组织创造更大价值。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 章节导航 -->
+                <div class="flex justify-between items-center mt-8 mb-12">
+                    <a href="21Project Management Scientific Foundations.html" class="flex items-center text-indigo-600 dark:text-indigo-400 hover:underline">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        上一章：项目管理科学基础
+                    </a>
+                    <a href="22Project Management Tools.html" class="flex items-center text-indigo-600 dark:text-indigo-400 hover:underline">
+                        下一章：项目管理工具
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>                    
+            </div>
+        </div>
+    </main>
+    
+    <!-- 页脚 -->
+    <footer class="bg-white dark:bg-gray-800 text-gray-800 dark:text-white py-8 mt-12 w-full">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold">项目管理知识体系</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2">资源管理是项目成功的关键因素</p>
+                </div>
+                <div>
+                    <ul class="flex space-x-4">
+                        <li><a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">首页</a></li>
+                        <li><a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">知识领域</a></li>
+                        <li><a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">过程组</a></li>
+                        <li><a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-300 dark:border-gray-700 mt-8 pt-8 text-center text-gray-600 dark:text-gray-400">
+                <p>&copy; 2023 项目管理知识体系 | 保留所有权利</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script>
+        // 暗黑模式切换
+        if (localStorage.getItem('darkMode') === 'true' || 
+            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+        
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('darkMode', 'false');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('darkMode', 'true');
+            }
+        }
+        
+        // 滚动监听
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('[id^="section-"]');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('bg-gray-100', 'dark:bg-gray-700', 'font-medium');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('bg-gray-100', 'dark:bg-gray-700', 'font-medium');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

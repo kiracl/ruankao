@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目进度管理知识体系</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">项目进度管理</h1>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block"></i>
+                </button>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-6">
+                        <li><a href="#basics" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">管理基础</a></li>
+                        <li><a href="#processes" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">管理过程</a></li>
+                        <li><a href="#tools" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">工具技术</a></li>
+                        <li><a href="#outputs" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">关键输出</a></li>
+                    </ul>
+                </nav>
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-md">
+            <nav class="container mx-auto px-4 py-2">
+                <ul class="space-y-2">
+                    <li><a href="#basics" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">管理基础</a></li>
+                    <li><a href="#processes" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">管理过程</a></li>
+                    <li><a href="#tools" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">工具技术</a></li>
+                    <li><a href="#outputs" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">关键输出</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section class="mb-16">
+            <div class="bg-gradient-to-r from-indigo-500 to-blue-500 rounded-xl shadow-lg overflow-hidden mb-8">
+                <div class="md:flex">
+                    <div class="md:w-2/3 p-8 md:p-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">项目进度管理</h2>
+                        <p class="text-indigo-100 text-lg mb-6">项目进度管理是项目管理的核心知识领域之一，它规定了项目活动的开始和结束日期，是项目执行、监控和控制的关键依据。</p>
+                        <div class="flex space-x-4">
+                            <a href="#basics" class="bg-white text-indigo-600 px-4 py-2 rounded-md font-medium hover:bg-indigo-50 transition-colors duration-200">了解基础</a>
+                            <a href="#processes" class="bg-transparent text-white border border-white px-4 py-2 rounded-md font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-200">探索过程</a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/3 bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center p-8">
+                        <i class="fas fa-calendar-alt text-8xl text-indigo-500 dark:text-indigo-400"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-check-circle text-2xl text-green-600 dark:text-green-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">进度计划定义</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">项目进度计划是项目管理计划的一部分，规定了项目活动的开始和结束日期，是项目执行和监控的关键依据。</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-tasks text-2xl text-blue-600 dark:text-blue-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">管理过程</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">项目进度管理包含六个主要过程，从规划进度管理到控制进度，形成一个完整的管理闭环。</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-tools text-2xl text-purple-600 dark:text-purple-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">工具与技术</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">关键路径法、关键链法、挣值管理等多种工具和技术，帮助项目经理有效规划和控制项目进度。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="basics" class="mb-16">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 bg-teal-100 dark:bg-teal-900 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-book text-teal-600 dark:text-teal-400"></i>
+                </div>
+                <h2 class="text-2xl font-bold">10.1 管理基础</h2>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+                <h3 class="text-xl font-semibold mb-4">10.1.1 项目进度计划的定义和总要求</h3>
+                <p class="mb-4">项目进度计划是项目管理计划的一部分，它规定了项目活动的开始和结束日期。它是项目执行、监控和控制的关键依据，也是项目团队沟通和协调的重要工具。</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-teal-50 dark:bg-teal-900 dark:bg-opacity-30 p-4 rounded-lg">
+                        <h4 class="font-semibold text-teal-700 dark:text-teal-300 mb-2">现实性 (Realistic)</h4>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">进度计划必须基于对项目范围、资源、技术和风险的合理评估和估算，确保在现有条件下是可行的。</p>
+                    </div>
+                    <div class="bg-teal-50 dark:bg-teal-900 dark:bg-opacity-30 p-4 rounded-lg">
+                        <h4 class="font-semibold text-teal-700 dark:text-teal-300 mb-2">可执行性 (Executable)</h4>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">进度计划需要足够详细，能够指导项目团队成员执行具体的任务和活动。活动需要被分解到可管理和可跟踪的程度。</p>
+                    </div>
+                    <div class="bg-teal-50 dark:bg-teal-900 dark:bg-opacity-30 p-4 rounded-lg">
+                        <h4 class="font-semibold text-teal-700 dark:text-teal-300 mb-2">可控性 (Controllable)</h4>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">进度计划应该能够被有效地监控和跟踪，以便及时发现偏差并采取纠正措施。需要设定明确的里程碑和关键时间点。</p>
+                    </div>
+                    <div class="bg-teal-50 dark:bg-teal-900 dark:bg-opacity-30 p-4 rounded-lg">
+                        <h4 class="font-semibold text-teal-700 dark:text-teal-300 mb-2">沟通性 (Communicative)</h4>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">进度计划应该清晰、简洁、易于理解，能够有效地传达给所有项目干系人，确保大家对项目的时间安排有共同的认识。</p>
+                    </div>
+                    <div class="bg-teal-50 dark:bg-teal-900 dark:bg-opacity-30 p-4 rounded-lg">
+                        <h4 class="font-semibold text-teal-700 dark:text-teal-300 mb-2">适应性 (Adaptable)</h4>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">项目执行过程中可能会出现各种变化，进度计划需要具备一定的灵活性，能够根据实际情况进行调整和更新。</p>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 dark:bg-yellow-900 dark:bg-opacity-30 p-4 rounded-lg">
+                    <h4 class="font-semibold text-yellow-700 dark:text-yellow-300 mb-2">关键点</h4>
+                    <p class="text-gray-700 dark:text-gray-300">进度计划是项目的时间维度基准 (Schedule Baseline)，用于衡量项目实际绩效是否符合计划。</p>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold mb-4">10.1.2 管理新实践</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-indigo-50 dark:bg-indigo-900 dark:bg-opacity-30 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-sync-alt text-2xl text-indigo-600 dark:text-indigo-400 mr-3"></i>
+                            <h4 class="font-semibold text-indigo-700 dark:text-indigo-300">敏捷方法 (Agile Methods)</h4>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">强调迭代式和增量式的进度规划，适用于需求不明确或变化频繁的项目。例如，使用短周期的迭代（如Sprint）、每日站会、燃尽图、看板等可视化工具来管理和跟踪进度。</p>
+                    </div>
+                    <div class="bg-indigo-50 dark:bg-indigo-900 dark:bg-opacity-30 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-random text-2xl text-indigo-600 dark:text-indigo-400 mr-3"></i>
+                            <h4 class="font-semibold text-indigo-700 dark:text-indigo-300">混合方法 (Hybrid Methods)</h4>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">结合了预测型（瀑布式）和适应型（敏捷式）方法的优点，根据项目的具体特点和需求进行灵活应用。例如，在项目初期使用预测型方法进行高层规划，在执行阶段采用敏捷方法进行迭代开发。</p>
+                    </div>
+                    <div class="bg-indigo-50 dark:bg-indigo-900 dark:bg-opacity-30 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-stream text-2xl text-indigo-600 dark:text-indigo-400 mr-3"></i>
+                            <h4 class="font-semibold text-indigo-700 dark:text-indigo-300">关注价值流 (Focus on Value Stream)</h4>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">不仅仅关注活动的完成情况，更强调按时交付对客户或业务有价值的可交付成果。进度管理的目标是确保价值能够及时地流向最终用户。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="processes" class="mb-16">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-cogs text-blue-600 dark:text-blue-400"></i>
+                </div>
+                <h2 class="text-2xl font-bold">10.2 项目进度管理过程</h2>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+                <h3 class="text-xl font-semibold mb-6">10.2.1 过程概述</h3>
+                
+                <div class="relative">
+                    <div class="absolute h-full w-1 bg-blue-200 dark:bg-blue-800 left-4 md:left-6 top-0"></div>
+                    
+                    <div class="relative pl-12 md:pl-16 pb-8">
+                        <div class="absolute left-0 top-0 w-8 h-8 md:w-12 md:h-12 bg-blue-500 rounded-full flex items-center justify-center z-10">
+                            <span class="text-white font-bold">1</span>
+                        </div>
+                        <div class="bg-blue-50 dark:bg-blue-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-700 dark:text-blue-300 mb-2">规划进度管理 (Plan Schedule Management)</h4>
+                            <p class="text-gray-700 dark:text-gray-300">确定如何规划、制定、管理、执行和控制项目进度的过程。</p>
+                            <p class="text-sm text-blue-600 dark:text-blue-400 mt-2">输出: 《进度管理计划》</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-12 md:pl-16 pb-8">
+                        <div class="absolute left-0 top-0 w-8 h-8 md:w-12 md:h-12 bg-blue-500 rounded-full flex items-center justify-center z-10">
+                            <span class="text-white font-bold">2</span>
+                        </div>
+                        <div class="bg-blue-50 dark:bg-blue-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-700 dark:text-blue-300 mb-2">定义活动 (Define Activities)</h4>
+                            <p class="text-gray-700 dark:text-gray-300">识别和记录为完成项目可交付成果而需采取的具体行动的过程。</p>
+                            <p class="text-sm text-blue-600 dark:text-blue-400 mt-2">输出: 《活动清单》、《活动属性》和《里程碑清单》</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-12 md:pl-16 pb-8">
+                        <div class="absolute left-0 top-0 w-8 h-8 md:w-12 md:h-12 bg-blue-500 rounded-full flex items-center justify-center z-10">
+                            <span class="text-white font-bold">3</span>
+                        </div>
+                        <div class="bg-blue-50 dark:bg-blue-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-700 dark:text-blue-300 mb-2">排列活动顺序 (Sequence Activities)</h4>
+                            <p class="text-gray-700 dark:text-gray-300">识别和记录项目活动之间的依赖关系的过程。</p>
+                            <p class="text-sm text-blue-600 dark:text-blue-400 mt-2">输出: 《项目进度网络图》和《活动清单更新》</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-12 md:pl-16 pb-8">
+                        <div class="absolute left-0 top-0 w-8 h-8 md:w-12 md:h-12 bg-blue-500 rounded-full flex items-center justify-center z-10">
+                            <span class="text-white font-bold">4</span>
+                        </div>
+                        <div class="bg-blue-50 dark:bg-blue-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-700 dark:text-blue-300 mb-2">估算活动持续时间 (Estimate Activity Durations)</h4>
+                            <p class="text-gray-700 dark:text-gray-300">对完成每个活动所需的工作时段进行近似估算的过程。</p>
+                            <p class="text-sm text-blue-600 dark:text-blue-400 mt-2">输出: 《活动持续时间估算》、《估算依据》和《活动清单更新》</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-12 md:pl-16 pb-8">
+                        <div class="absolute left-0 top-0 w-8 h-8 md:w-12 md:h-12 bg-blue-500 rounded-full flex items-center justify-center z-10">
+                            <span class="text-white font-bold">5</span>
+                        </div>
+                        <div class="bg-blue-50 dark:bg-blue-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-700 dark:text-blue-300 mb-2">制订进度计划 (Develop Schedule)</h4>
+                            <p class="text-gray-700 dark:text-gray-300">分析活动顺序、持续时间、资源需求和资源制约因素，创建项目进度模型的过程。</p>
+                            <p class="text-sm text-blue-600 dark:text-blue-400 mt-2">输出: 《进度基准》、《项目进度计划》、《进度数据》、《项目日历》、《项目管理计划更新》和《项目文件更新》</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-12 md:pl-16">
+                        <div class="absolute left-0 top-0 w-8 h-8 md:w-12 md:h-12 bg-blue-500 rounded-full flex items-center justify-center z-10">
+                            <span class="text-white font-bold">6</span>
+                        </div>
+                        <div class="bg-blue-50 dark:bg-blue-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-700 dark:text-blue-300 mb-2">控制进度 (Control Schedule)</h4>
+                            <p class="text-gray-700 dark:text-gray-300">监督项目状态，更新项目进度，管理进度基准变更的过程。</p>
+                            <p class="text-sm text-blue-600 dark:text-blue-400 mt-2">输出: 《工作绩效信息》、《进度预测》、《变更请求》、《项目管理计划更新》、《项目文件更新》和《组织过程资产更新》</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">10.2.2 裁剪考虑因素 (Tailoring Considerations)</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><span class="font-medium">项目的规模和复杂性:</span> 大型或复杂的项目可能需要更详细和精细的进度管理。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><span class="font-medium">项目的紧急程度:</span> 时间约束严格的项目可能需要更频繁的监控和更灵活的调整机制。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><span class="font-medium">行业特点和组织文化:</span> 不同行业和组织可能对进度管理有不同的标准和偏好。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><span class="font-medium">项目团队的经验和能力:</span> 经验丰富的团队可能能够更有效地进行进度规划和控制。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><span class="font-medium">干系人的需求和期望:</span> 不同的干系人可能对项目的完成时间有不同的期望。</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">10.2.3 敏捷与适应方法 (Agile and Adaptive Methods)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-purple-50 dark:bg-purple-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-700 dark:text-purple-300 mb-2">迭代规划 (Iteration Planning)</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">将项目分解为多个短期的、固定时长的迭代，每个迭代都产生可交付的成果。每个迭代开始前进行详细规划。</p>
+                        </div>
+                        <div class="bg-purple-50 dark:bg-purple-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-700 dark:text-purple-300 mb-2">冲刺规划 (Sprint Planning)</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">在Scrum框架中，每个Sprint开始时，团队会选择Backlog中的任务，并制定本次Sprint的目标和计划。</p>
+                        </div>
+                        <div class="bg-purple-50 dark:bg-purple-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-700 dark:text-purple-300 mb-2">燃尽图/燃起图</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">可视化地跟踪剩余工作量（燃尽图）或已完成工作量（燃起图）随时间的变化，用于监控迭代或项目的整体进展。</p>
+                        </div>
+                        <div class="bg-purple-50 dark:bg-purple-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-700 dark:text-purple-300 mb-2">看板 (Kanban)</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">一种可视化工作流的工具，通过看板上的泳道表示任务的不同状态，并限制每个状态下的在制品数量，以提高效率和控制节奏。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold mb-6">进度管理过程流程图</h3>
+                <div class="w-full overflow-x-auto">
+                    <div class="min-w-max">
+                        <svg class="w-full" height="300" viewBox="0 0 800 300">
+                            <defs>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#4B5563" />
+                                </marker>
+                            </defs>
+                            <!-- 流程框 -->
+                            <rect x="50" y="50" width="100" height="60" rx="5" fill="#C7D2FE" stroke="#6366F1" stroke-width="2" class="dark:fill-indigo-900 dark:fill-opacity-50" />
+                            <rect x="200" y="50" width="100" height="60" rx="5" fill="#C7D2FE" stroke="#6366F1" stroke-width="2" class="dark:fill-indigo-900 dark:fill-opacity-50" />
+                            <rect x="350" y="50" width="100" height="60" rx="5" fill="#C7D2FE" stroke="#6366F1" stroke-width="2" class="dark:fill-indigo-900 dark:fill-opacity-50" />
+                            <rect x="500" y="50" width="100" height="60" rx="5" fill="#C7D2FE" stroke="#6366F1" stroke-width="2" class="dark:fill-indigo-900 dark:fill-opacity-50" />
+                            <rect x="650" y="50" width="100" height="60" rx="5" fill="#C7D2FE" stroke="#6366F1" stroke-width="2" class="dark:fill-indigo-900 dark:fill-opacity-50" />
+                            <rect x="350" y="160" width="100" height="60" rx="5" fill="#C7D2FE" stroke="#6366F1" stroke-width="2" class="dark:fill-indigo-900 dark:fill-opacity-50" />
+                            
+                            <!-- 文本 -->
+                            <text x="100" y="85" text-anchor="middle" fill="#1E40AF" class="dark:fill-indigo-300" font-size="12">规划进度管理</text>
+                            <text x="250" y="85" text-anchor="middle" fill="#1E40AF" class="dark:fill-indigo-300" font-size="12">定义活动</text>
+                            <text x="400" y="85" text-anchor="middle" fill="#1E40AF" class="dark:fill-indigo-300" font-size="12">排列活动顺序</text>
+                            <text x="550" y="85" text-anchor="middle" fill="#1E40AF" class="dark:fill-indigo-300" font-size="12">估算活动持续时间</text>
+                            <text x="700" y="85" text-anchor="middle" fill="#1E40AF" class="dark:fill-indigo-300" font-size="12">制订进度计划</text>
+                            <text x="400" y="195" text-anchor="middle" fill="#1E40AF" class="dark:fill-indigo-300" font-size="12">控制进度</text>
+                            
+                            <!-- 连接线 -->
+                            <line x1="150" y1="80" x2="190" y2="80" stroke="#4B5563" stroke-width="2" marker-end="url(#arrowhead)" />
+                            <line x1="300" y1="80" x2="340" y2="80" stroke="#4B5563" stroke-width="2" marker-end="url(#arrowhead)" />
+                            <line x1="450" y1="80" x2="490" y2="80" stroke="#4B5563" stroke-width="2" marker-end="url(#arrowhead)" />
+                            <line x1="600" y1="80" x2="640" y2="80" stroke="#4B5563" stroke-width="2" marker-end="url(#arrowhead)" />
+                            <line x1="700" y1="110" x2="700" y2="220" stroke="#4B5563" stroke-width="2" />
+                            <line x1="700" y1="220" x2="460" y2="220" stroke="#4B5563" stroke-width="2" marker-end="url(#arrowhead)" />
+                            <line x1="350" y1="190" x2="100" y2="190" stroke="#4B5563" stroke-width="2" />
+                            <line x1="100" y1="190" x2="100" y2="120" stroke="#4B5563" stroke-width="2" marker-end="url(#arrowhead)" />
+                            
+                            <!-- 反馈循环标签 -->
+                            <text x="220" y="220" text-anchor="middle" fill="#4B5563" font-size="12">变更请求和更新</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tools" class="mb-16">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-tools text-orange-600 dark:text-orange-400"></i>
+                </div>
+                <h2 class="text-2xl font-bold">10.3-10.8 关键工具与技术</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">估算技术</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-orange-50 dark:bg-orange-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-700 dark:text-orange-300 mb-2">三点估算 (Three-Point Estimating)</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm mb-2">考虑估算的不确定性和风险，使用三个估算值：</p>
+                            <div class="bg-white dark:bg-gray-700 p-3 rounded-md">
+                                <p class="text-sm font-mono">
+                                    最乐观时间 (O) - 最可能时间 (M) - 最悲观时间 (P)
+                                </p>
+                                <div class="border-t border-gray-200 dark:border-gray-600 my-2"></div>
+                                <p class="text-sm font-mono">
+                                    三角形分布: TE = (O + M + P) / 3<br>
+                                    贝塔分布 (PERT): TE = (O + 4M + P) / 6
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-orange-50 dark:bg-orange-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-700 dark:text-orange-300 mb-2">自下而上估算 (Bottom-Up Estimating)</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">对每个活动或工作包进行详细估算，然后将这些估算汇总起来得到项目总的持续时间。这种方法通常更准确，但需要更多的时间和资源。</p>
+                        </div>
+                        
+                        <div class="bg-orange-50 dark:bg-orange-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-700 dark:text-orange-300 mb-2">储备分析 (Reserve Analysis)</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">在活动持续时间估算中增加一定的缓冲时间（应急储备）以应对潜在的风险或不确定性。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">进度网络分析</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-orange-50 dark:bg-orange-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-700 dark:text-orange-300 mb-2">关键路径法 (Critical Path Method, CPM)</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm mb-2">识别项目中最长的活动序列，这条路径上的任何延迟都会直接影响项目的总完成时间。关键路径上的活动的浮动时间为零或负值。</p>
+                            <div class="flex items-center justify-center my-2">
+                                <div class="w-full max-w-md">
+                                    <div class="flex justify-between mb-1">
+                                        <div class="text-xs text-gray-600 dark:text-gray-400">前向计算</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400">后向计算</div>
+                                    </div>
+                                    <div class="h-2 bg-blue-200 dark:bg-blue-800 rounded-full">
+                                        <div class="h-2 bg-blue-600 rounded-full" style="width: 100%"></div>
+                                    </div>
+                                    <div class="flex justify-between mt-1">
+                                        <div class="text-xs text-gray-600 dark:text-gray-400">ES, EF</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400">LS, LF</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-orange-50 dark:bg-orange-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-700 dark:text-orange-300 mb-2">关键链法 (Critical Chain Method, CCM)</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">一种考虑了资源制约因素的进度规划方法。在关键路径的基础上，增加了缓冲（项目缓冲和接驳缓冲）来应对资源瓶颈和计划的不确定性。</p>
+                        </div>
+                        
+                        <div class="bg-orange-50 dark:bg-orange-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-700 dark:text-orange-300 mb-2">资源优化 (Resource Optimization)</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">调整活动的开始和结束日期，以解决资源瓶颈或更有效地利用资源。包括资源平衡和资源平滑两种技术。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">进度压缩 (Schedule Compression)</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-orange-50 dark:bg-orange-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-700 dark:text-orange-300 mb-2">赶工 (Crashing)</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">通过增加资源（如人力、设备）来缩短关键路径上的活动持续时间。通常会增加成本，但不会增加太多风险。</p>
+                            <div class="flex items-center mt-2">
+                                <i class="fas fa-money-bill-wave text-green-600 dark:text-green-400 mr-2"></i>
+                                <span class="text-xs text-gray-600 dark:text-gray-400">成本增加</span>
+                                <i class="fas fa-exclamation-triangle text-yellow-600 dark:text-yellow-400 ml-4 mr-2"></i>
+                                <span class="text-xs text-gray-600 dark:text-gray-400">风险适中</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-orange-50 dark:bg-orange-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-700 dark:text-orange-300 mb-2">快速跟进 (Fast-Tracking)</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">并行执行通常按顺序进行的活动。可能会增加风险，因为如果一个活动需要返工，可能会影响到已经开始的后续活动。</p>
+                            <div class="flex items-center mt-2">
+                                <i class="fas fa-money-bill-wave text-green-600 dark:text-green-400 mr-2"></i>
+                                <span class="text-xs text-gray-600 dark:text-gray-400">成本影响小</span>
+                                <i class="fas fa-exclamation-triangle text-red-600 dark:text-red-400 ml-4 mr-2"></i>
+                                <span class="text-xs text-gray-600 dark:text-gray-400">风险较高</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">挣值管理 (Earned Value Management, EVM)</h3>
+                    
+                    <div class="space-y-4">
+                        <p class="text-gray-700 dark:text-gray-300">一种综合的项目绩效衡量方法，将范围、时间和成本绩效整合在一起。</p>
+                        
+                        <div class="bg-orange-50 dark:bg-orange-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-700 dark:text-orange-300 mb-2">关键指标</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                <div class="bg-white dark:bg-gray-700 p-2 rounded-md">
+                                    <p class="text-sm font-medium">PV (计划值)</p>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">截至目前计划完成的工作的预算价值</p>
+                                </div>
+                                <div class="bg-white dark:bg-gray-700 p-2 rounded-md">
+                                    <p class="text-sm font-medium">EV (挣值)</p>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">截至目前实际完成的工作的预算价值</p>
+                                </div>
+                                <div class="bg-white dark:bg-gray-700 p-2 rounded-md">
+                                    <p class="text-sm font-medium">AC (实际成本)</p>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">截至目前完成工作所花费的实际成本</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-orange-50 dark:bg-orange-900 dark:bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-700 dark:text-orange-300 mb-2">进度绩效指标</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                <div class="bg-white dark:bg-gray-700 p-2 rounded-md">
+                                    <p class="text-sm font-medium">SV (进度偏差)</p>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">SV = EV - PV</p>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">正值表示进度提前，负值表示进度落后</p>
+                                </div>
+                                <div class="bg-white dark:bg-gray-700 p-2 rounded-md">
+                                    <p class="text-sm font-medium">SPI (进度绩效指数)</p>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">SPI = EV / PV</p>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">大于1表示进度提前，小于1表示进度落后</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="outputs" class="mb-16">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 bg-pink-100 dark:bg-pink-900 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-file-alt text-pink-600 dark:text-pink-400"></i>
+                </div>
+                <h2 class="text-2xl font-bold">关键输出</h2>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-pink-50 dark:bg-pink-900 dark:bg-opacity-30 p-6 rounded-lg transform hover:scale-105 transition-transform duration-300">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-clipboard-list text-2xl text-pink-600 dark:text-pink-400 mr-3"></i>
+                            <h4 class="font-semibold text-pink-700 dark:text-pink-300">进度管理计划</h4>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">规定了项目进度的制定、管理、执行和控制的标准和方法。包括进度模型的开发方法、进度计划的更新频率、进度控制的阈值等。</p>
+                    </div>
+                    
+                    <div class="bg-pink-50 dark:bg-pink-900 dark:bg-opacity-30 p-6 rounded-lg transform hover:scale-105 transition-transform duration-300">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-tasks text-2xl text-pink-600 dark:text-pink-400 mr-3"></i>
+                            <h4 class="font-semibold text-pink-700 dark:text-pink-300">活动清单</h4>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">包含项目中需要执行的所有活动，每个活动都有一个唯一的标识符和足够详细的描述，以确保项目团队成员了解需要完成的工作。</p>
+                    </div>
+                    
+                    <div class="bg-pink-50 dark:bg-pink-900 dark:bg-opacity-30 p-6 rounded-lg transform hover:scale-105 transition-transform duration-300">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-project-diagram text-2xl text-pink-600 dark:text-pink-400 mr-3"></i>
+                            <h4 class="font-semibold text-pink-700 dark:text-pink-300">项目进度网络图</h4>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">图形化地展示项目活动之间的逻辑关系（依赖关系），帮助项目团队了解活动的顺序和相互影响。</p>
+                    </div>
+                    
+                    <div class="bg-pink-50 dark:bg-pink-900 dark:bg-opacity-30 p-6 rounded-lg transform hover:scale-105 transition-transform duration-300">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-clock text-2xl text-pink-600 dark:text-pink-400 mr-3"></i>
+                            <h4 class="font-semibold text-pink-700 dark:text-pink-300">活动持续时间估算</h4>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">对完成每个活动所需的工作时段的定量估算，通常以工作时间（小时、天、周）表示，并包含估算的范围（如±10%）。</p>
+                    </div>
+                    
+                    <div class="bg-pink-50 dark:bg-pink-900 dark:bg-opacity-30 p-6 rounded-lg transform hover:scale-105 transition-transform duration-300">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-flag-checkered text-2xl text-pink-600 dark:text-pink-400 mr-3"></i>
+                            <h4 class="font-semibold text-pink-700 dark:text-pink-300">进度基准</h4>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">经过批准的项目进度计划，是衡量项目实际进度绩效的基准。只有通过正式的变更控制过程才能更改。</p>
+                    </div>
+                    
+                    <div class="bg-pink-50 dark:bg-pink-900 dark:bg-opacity-30 p-6 rounded-lg transform hover:scale-105 transition-transform duration-300">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-chart-line text-2xl text-pink-600 dark:text-pink-400 mr-3"></i>
+                            <h4 class="font-semibold text-pink-700 dark:text-pink-300">工作绩效信息</h4>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">关于项目进度执行情况的信息，例如，哪些活动已经开始、进行中或已完成，以及它们与计划的偏差情况。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold mb-6">进度计划可视化</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-700 dark:text-gray-300 mb-4">甘特图 (Gantt Chart)</h4>
+                        <div class="w-full overflow-x-auto">
+                            <div class="min-w-max">
+                                <div class="flex mb-2">
+                                    <div class="w-32 p-2 bg-gray-200 dark:bg-gray-600 font-medium">活动</div>
+                                    <div class="flex-1 flex">
+                                        <div class="w-8 p-2 bg-gray-200 dark:bg-gray-600 text-center">1</div>
+                                        <div class="w-8 p-2 bg-gray-200 dark:bg-gray-600 text-center">2</div>
+                                        <div class="w-8 p-2 bg-gray-200 dark:bg-gray-600 text-center">3</div>
+                                        <div class="w-8 p-2 bg-gray-200 dark:bg-gray-600 text-center">4</div>
+                                        <div class="w-8 p-2 bg-gray-200 dark:bg-gray-600 text-center">5</div>
+                                        <div class="w-8 p-2 bg-gray-200 dark:bg-gray-600 text-center">6</div>
+                                        <div class="w-8 p-2 bg-gray-200 dark:bg-gray-600 text-center">7</div>
+                                        <div class="w-8 p-2 bg-gray-200 dark:bg-gray-600 text-center">8</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center mb-1">
+                                    <div class="w-32 p-2 bg-gray-100 dark:bg-gray-800">活动 A</div>
+                                    <div class="flex-1 relative h-8">
+                                        <div class="absolute top-1 left-0 h-6 bg-blue-500 rounded" style="width: 96px;"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center mb-1">
+                                    <div class="w-32 p-2 bg-gray-100 dark:bg-gray-800">活动 B</div>
+                                    <div class="flex-1 relative h-8">
+                                        <div class="absolute top-1 left-24 h-6 bg-blue-500 rounded" style="width: 64px;"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center mb-1">
+                                    <div class="w-32 p-2 bg-gray-100 dark:bg-gray-800">活动 C</div>
+                                    <div class="flex-1 relative h-8">
+                                        <div class="absolute top-1 left-48 h-6 bg-blue-500 rounded" style="width: 48px;"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-32 p-2 bg-gray-100 dark:bg-gray-800">活动 D</div>
+                                    <div class="flex-1 relative h-8">
+                                        <div class="absolute top-1 left-24 h-6 bg-blue-500 rounded" style="width: 96px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-700 dark:text-gray-300 mb-4">里程碑图 (Milestone Chart)</h4>
+                        <div class="w-full overflow-x-auto">
+                            <div class="min-w-max">
+                                <div class="flex mb-2">
+                                    <div class="w-40 p-2 bg-gray-200 dark:bg-gray-600 font-medium">里程碑</div>
+                                    <div class="flex-1 flex">
+                                        <div class="w-12 p-2 bg-gray-200 dark:bg-gray-600 text-center">1月</div>
+                                        <div class="w-12 p-2 bg-gray-200 dark:bg-gray-600 text-center">2月</div>
+                                        <div class="w-12 p-2 bg-gray-200 dark:bg-gray-600 text-center">3月</div>
+                                        <div class="w-12 p-2 bg-gray-200 dark:bg-gray-600 text-center">4月</div>
+                                        <div class="w-12 p-2 bg-gray-200 dark:bg-gray-600 text-center">5月</div>
+                                        <div class="w-12 p-2 bg-gray-200 dark:bg-gray-600 text-center">6月</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <div class="w-40 p-2 bg-gray-100 dark:bg-gray-800">项目启动</div>
+                                    <div class="flex-1 relative h-8">
+                                        <div class="absolute top-1 left-0 h-6 w-6 bg-green-500 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <div class="w-40 p-2 bg-gray-100 dark:bg-gray-800">需求分析完成</div>
+                                    <div class="flex-1 relative h-8">
+                                        <div class="absolute top-1 left-24 h-6 w-6 bg-green-500 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <div class="w-40 p-2 bg-gray-100 dark:bg-gray-800">设计阶段完成</div>
+                                    <div class="flex-1 relative h-8">
+                                        <div class="absolute top-1 left-48 h-6 w-6 bg-yellow-500 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-hourglass-half text-white text-xs"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <div class="w-40 p-2 bg-gray-100 dark:bg-gray-800">开发完成</div>
+                                    <div class="flex-1 relative h-8">
+                                        <div class="absolute top-1 left-60 h-6 w-6 bg-gray-400 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-clock text-white text-xs"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-40 p-2 bg-gray-100 dark:bg-gray-800">项目交付</div>
+                                    <div class="flex-1 relative h-8">
+                                        <div class="absolute top-1 left-72 h-6 w-6 bg-gray-400 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-clock text-white text-xs"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="best-practices" class="mb-16">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-star text-purple-600 dark:text-purple-400"></i>
+                </div>
+                <h2 class="text-2xl font-bold">10.9 进度管理最佳实践</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">进度规划最佳实践</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-8 w-8 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-purple-600 dark:text-purple-400 font-semibold">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-1">确保WBS与进度计划的一致性</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">进度计划中的活动应该与工作分解结构(WBS)保持一致，确保所有项目工作都被纳入进度计划中。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-8 w-8 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-purple-600 dark:text-purple-400 font-semibold">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-1">合理设置里程碑</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">在项目的关键点设置里程碑，以便于跟踪项目进展。里程碑应该是明确的、可衡量的，并且与项目的重要交付成果相关联。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-8 w-8 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-purple-600 dark:text-purple-400 font-semibold">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-1">考虑资源可用性</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">在制定进度计划时，要充分考虑资源的可用性和能力，避免资源过度分配或冲突。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-8 w-8 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-purple-600 dark:text-purple-400 font-semibold">4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-1">纳入适当的缓冲</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">在进度计划中加入适当的时间缓冲，以应对不确定性和风险。但要避免过度缓冲导致的帕金森定律效应（工作会扩展以填满可用的时间）。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-8 w-8 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-purple-600 dark:text-purple-400 font-semibold">5</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-1">使用历史数据和经验教训</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">利用过去项目的历史数据和经验教训来改进当前项目的进度估算和规划。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">进度控制最佳实践</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-8 w-8 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-purple-600 dark:text-purple-400 font-semibold">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-1">定期更新进度状态</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">建立定期的进度状态更新机制，确保项目团队及时报告活动的完成情况和剩余工作量。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-8 w-8 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-purple-600 dark:text-purple-400 font-semibold">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-1">关注关键路径</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">密切监控关键路径上的活动，因为它们的延迟会直接影响项目的完成时间。同时也要关注接近关键的路径，因为它们可能随时变成新的关键路径。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-8 w-8 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-purple-600 dark:text-purple-400 font-semibold">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-1">使用挣值分析</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">采用挣值管理(EVM)方法来客观地衡量项目的进度绩效，及时发现偏差并采取纠正措施。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-8 w-8 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-purple-600 dark:text-purple-400 font-semibold">4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-1">预测性分析</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">基于当前的进度绩效，定期进行预测分析，评估项目是否能按计划完成，以及可能的完成日期。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-8 w-8 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-purple-600 dark:text-purple-400 font-semibold">5</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-1">及时采取纠正措施</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">当发现进度偏差时，及时分析原因并采取适当的纠正措施，如重新分配资源、调整活动顺序、压缩进度等。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges" class="mb-16">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-exclamation-triangle text-red-600 dark:text-red-400"></i>
+                </div>
+                <h2 class="text-2xl font-bold">10.10 常见挑战与应对策略</h2>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">常见挑战</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-red-50 dark:bg-red-900 dark:bg-opacity-30 p-4 rounded-lg">
+                                <h4 class="font-semibold text-red-700 dark:text-red-300 mb-2">范围蔓延 (Scope Creep)</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">项目范围的不断扩大会导致进度延迟。这通常是由于需求变更、未记录的需求或对项目范围的理解不一致造成的。</p>
+                            </div>
+                            
+                            <div class="bg-red-50 dark:bg-red-900 dark:bg-opacity-30 p-4 rounded-lg">
+                                <h4 class="font-semibold text-red-700 dark:text-red-300 mb-2">过度乐观的估算</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">由于压力、经验不足或对复杂性的低估，项目经理和团队成员可能会做出过度乐观的时间估算。</p>
+                            </div>
+                            
+                            <div class="bg-red-50 dark:bg-red-900 dark:bg-opacity-30 p-4 rounded-lg">
+                                <h4 class="font-semibold text-red-700 dark:text-red-300 mb-2">资源不足或不可用</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">计划中的资源可能不可用或能力不足，导致活动延迟或质量问题。</p>
+                            </div>
+                            
+                            <div class="bg-red-50 dark:bg-red-900 dark:bg-opacity-30 p-4 rounded-lg">
+                                <h4 class="font-semibold text-red-700 dark:text-red-300 mb-2">依赖关系管理不当</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">未能正确识别和管理活动之间的依赖关系，特别是外部依赖，可能导致意外的延迟。</p>
+                            </div>
+                            
+                            <div class="bg-red-50 dark:bg-red-900 dark:bg-opacity-30 p-4 rounded-lg">
+                                <h4 class="font-semibold text-red-700 dark:text-red-300 mb-2">风险管理不足</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">未能识别和管理可能影响进度的风险，或者没有为风险事件的发生制定应急计划。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">应对策略</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-green-50 dark:bg-green-900 dark:bg-opacity-30 p-4 rounded-lg">
+                                <h4 class="font-semibold text-green-700 dark:text-green-300 mb-2">强化变更控制</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">建立严格的变更控制流程，确保所有范围变更都经过适当的评估、批准和记录，并相应地更新进度计划。</p>
+                            </div>
+                            
+                            <div class="bg-green-50 dark:bg-green-900 dark:bg-opacity-30 p-4 rounded-lg">
+                                <h4 class="font-semibold text-green-700 dark:text-green-300 mb-2">改进估算技术</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">使用多种估算技术（如三点估算、类比估算、参数估算），并结合历史数据和专家判断来提高估算的准确性。</p>
+                            </div>
+                            
+                            <div class="bg-green-50 dark:bg-green-900 dark:bg-opacity-30 p-4 rounded-lg">
+                                <h4 class="font-semibold text-green-700 dark:text-green-300 mb-2">资源平衡与优化</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">定期审查资源分配情况，确保资源的有效利用，必要时调整资源分配或获取额外资源。</p>
+                            </div>
+                            
+                            <div class="bg-green-50 dark:bg-green-900 dark:bg-opacity-30 p-4 rounded-lg">
+                                <h4 class="font-semibold text-green-700 dark:text-green-300 mb-2">主动管理依赖关系</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">识别并记录所有关键依赖关系，特别是外部依赖，并与相关方保持密切沟通，确保依赖项按时交付。</p>
+                            </div>
+                            
+                            <div class="bg-green-50 dark:bg-green-900 dark:bg-opacity-30 p-4 rounded-lg">
+                                <h4 class="font-semibold text-green-700 dark:text-green-300 mb-2">整合风险管理</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">将风险管理与进度管理紧密结合，识别可能影响进度的风险，制定应对策略，并在进度计划中纳入适当的时间储备。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="case-study" class="mb-16">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 bg-yellow-100 dark:bg-yellow-900 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-lightbulb text-yellow-600 dark:text-yellow-400"></i>
+                </div>
+                <h2 class="text-2xl font-bold">10.11 案例研究</h2>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold mb-4">软件开发项目进度管理案例</h3>
+                
+                <div class="bg-yellow-50 dark:bg-yellow-900 dark:bg-opacity-30 p-6 rounded-lg mb-6">
+                    <h4 class="font-semibold text-yellow-700 dark:text-yellow-300 mb-3">项目背景</h4>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">某公司计划开发一个新的客户关系管理(CRM)系统，项目预计需要6个月完成，包括需求分析、设计、开发、测试和部署等阶段。项目团队由10名成员组成，包括项目经理、业务分析师、开发人员和测试人员。</p>
+                    
+                    <h4 class="font-semibold text-yellow-700 dark:text-yellow-300 mb-3">挑战</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300 mb-4">
+                        <li>项目范围较大，涉及多个业务部门的需求</li>
+                        <li>团队成员分布在不同地点，沟通协调存在挑战</li>
+                        <li>部分关键技术是团队首次使用，存在学习曲线</li>
+                        <li>项目依赖于外部供应商提供的API接口</li>
+                    </ul>
+                    
+                    <h4 class="font-semibold text-yellow-700 dark:text-yellow-300 mb-3">进度管理方法</h4>
+                    <p class="text-gray-700 dark:text-gray-300 mb-2">项目团队采用了混合方法：</p>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+                        <li>使用传统的瀑布方法进行高层规划，确定主要阶段和里程碑</li>
+                        <li>在开发阶段采用敏捷方法，将工作分解为2周的迭代</li>
+                        <li>使用甘特图展示整体进度计划，使用看板管理日常任务</li>
+                        <li>每周进行进度审查会议，每日进行15分钟的站会</li>
+                    </ul>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-blue-50 dark:bg-blue-900 dark:bg-opacity-30 p-4 rounded-lg">
+                        <h4 class="font-semibold text-blue-700 dark:text-blue-300 mb-2">关键成功因素</h4>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+                            <li>详细的WBS和活动分解，确保所有工作都被纳入计划</li>
+                            <li>使用三点估算方法，考虑了不确定性和风险</li>
+                            <li>在关键路径上增加了适当的缓冲时间</li>
+                            <li>与外部供应商建立了明确的沟通机制和交付时间表</li>
+                            <li>使用挣值管理方法跟踪进度绩效</li>
+                            <li>定期更新风险登记册，并调整进度计划</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-green-50 dark:bg-green-900 dark:bg-opacity-30 p-4 rounded-lg">
+                        <h4 class="font-semibold text-green-700 dark:text-green-300 mb-2">结果与经验教训</h4>
+                        <p class="text-gray-700 dark:text-gray-300 mb-3">项目最终比原计划延迟了2周完成，但仍在可接受的范围内。主要经验教训包括：</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+                            <li>混合方法在复杂项目中的有效性，既保证了整体方向，又提供了足够的灵活性</li>
+                            <li>对新技术的学习曲线估计不足，应该在估算中考虑更多的时间</li>
+                            <li>外部依赖的管理至关重要，需要建立更紧密的合作关系</li>
+                            <li>定期的进度审查和及时的调整是保证项目按时完成的关键</li>
+                            <li>团队协作工具的使用大大提高了分布式团队的协作效率</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="summary" class="mb-16">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-check-double text-gray-600 dark:text-gray-400"></i>
+                </div>
+                <h2 class="text-2xl font-bold">10.12 总结</h2>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                <div class="prose max-w-none dark:prose-invert">
+                    <p>项目进度管理是项目管理的核心知识领域之一，它直接影响项目的成功与否。有效的进度管理不仅仅是制定一个计划，更是一个持续的过程，包括规划、执行、监控和调整。</p>
+                    
+                    <p>在当今快速变化的环境中，项目进度管理需要结合传统方法和新兴实践，既要有系统性的规划，又要有足够的灵活性来应对变化。关键是要根据项目的特点和需求，选择合适的方法和工具，并在项目执行过程中不断优化和调整。</p>
+                    
+                    <p>成功的进度管理需要项目经理和团队成员的共同努力，需要良好的沟通和协作，需要对风险和变更的有效管理，也需要对资源的合理分配和优化。通过持续学习和改进，项目团队可以不断提高进度管理的能力和成熟度，为项目的成功交付奠定坚实的基础。</p>
+                </div>
+                
+                <div class="mt-8 bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-3">关键要点回顾</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-700 dark:text-gray-300">项目进度管理包括六个主要过程：规划进度管理、定义活动、排列活动顺序、估算活动持续时间、制订进度计划和控制进度。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-700 dark:text-gray-300">关键路径法(CPM)和关键链法(CCM)是两种重要的进度网络分析技术，帮助识别项目中的关键活动和潜在瓶颈。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-700 dark:text-gray-300">进度压缩技术如赶工和快速跟进可以帮助缩短项目持续时间，但可能会增加成本或风险。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-700 dark:text-gray-300">挣值管理(EVM)是一种有效的进度绩效衡量方法，它通过比较计划值、挣值和实际成本来评估项目的进度和成本绩效。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-700 dark:text-gray-300">有效的进度管理需要平衡范围、时间、成本和质量之间的关系，并考虑资源和风险因素。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-700 dark:text-gray-300">进度管理工具和技术的选择应该根据项目的特点和需求，可以结合传统方法和敏捷方法的优势。</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="flex justify-between items-center mt-12 mb-8">
+            <a href="09Project Scope Management.html" class="flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                <i class="fas fa-arrow-left mr-2"></i>
+                上一章：项目范围管理
+            </a>
+            <a href="11Project Cost Management.html" class="flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                下一章：项目成本管理
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div> 
+
+        <footer class="bg-gray-800 dark:bg-gray-900 py-8 mt-16">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-6 md:mb-0">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">项目管理知识体系</h3>
+                        <p class="text-gray-600 dark:text-gray-400">提升您的项目管理技能，实现卓越项目交付</p>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <hr class="border-gray-300 dark:border-gray-700 my-6">
+                
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">&copy; 2023 项目管理知识体系. 保留所有权利.</p>
+                    </div>
+                    
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 text-sm">隐私政策</a>
+                        <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 text-sm">使用条款</a>
+                        <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 text-sm">联系我们</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript -->
+        <script>
+            // 暗黑模式切换
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const htmlElement = document.documentElement;
+            
+            // 检查本地存储中的暗黑模式偏好
+            if (localStorage.getItem('darkMode') === 'enabled' || 
+                (localStorage.getItem('darkMode') !== 'disabled' && 
+                window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                htmlElement.classList.add('dark');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+            
+            darkModeToggle.addEventListener('click', function() {
+                if (htmlElement.classList.contains('dark')) {
+                    htmlElement.classList.remove('dark');
+                    localStorage.setItem('darkMode', 'disabled');
+                    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                } else {
+                    htmlElement.classList.add('dark');
+                    localStorage.setItem('darkMode', 'enabled');
+                    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                }
+            });
+            
+            // 返回顶部按钮
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('opacity-100');
+                    backToTopButton.classList.remove('opacity-0');
+                } else {
+                    backToTopButton.classList.add('opacity-0');
+                    backToTopButton.classList.remove('opacity-100');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // 侧边导航栏固定
+            const sidebar = document.getElementById('sidebar');
+            const sidebarTop = sidebar.offsetTop;
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset >= sidebarTop) {
+                    sidebar.classList.add('fixed', 'top-4');
+                } else {
+                    sidebar.classList.remove('fixed', 'top-4');
+                }
+            });
+            
+            // 平滑滚动到锚点
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
